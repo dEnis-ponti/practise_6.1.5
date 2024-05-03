@@ -1,10 +1,18 @@
 @import 'fonts.scss';
 @import 'variables.scss';
 
+@import './blocks/globals.scss';
+@import './blocks/header.scss';
+@import './blocks/burger.scss';
+@import './blocks/main.scss';
+@import './blocks/brands.scss';
+@import './blocks/services.scss';
+
 .page {
   font-family: 'TT Lakes', sans-serif;
+  &--center {
+    display: flex;
+  }
 }
 
-.page--center {
-  margin: 0 auto;
-}
+/* *Local styles* */
