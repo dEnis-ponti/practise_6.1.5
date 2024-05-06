@@ -4,6 +4,7 @@
   padding: 24px 0;
   position: relative;
   background-color: #f8f8f8;
+  max-width: 1120px;
 }
 
 .main__headline {
@@ -148,9 +149,6 @@
 }
 
 @media (min-width: 1120px) {
-  .main__container {
-    padding: 42px 0;
-  }
   .slide-menu {
     overflow-x: visible;
   }

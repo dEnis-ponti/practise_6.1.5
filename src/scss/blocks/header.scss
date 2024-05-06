@@ -7,6 +7,10 @@
   padding: 0 16px;
   align-items: center;
   border-bottom: 1px solid #d9fff5;
+  position: absolute;
+
+  width: 1105px;
+  z-index: 100;
 }
 
 .header-col {
@@ -16,6 +20,10 @@
 
 .header__left-col {
   width: 186px;
+}
+
+.header__left-col--page-header {
+  transform: translateX(-100px);
 }
 
 .header__right-col {

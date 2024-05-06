@@ -2,14 +2,16 @@
 
 .burger-menu {
   &--aside {
-    max-width: 320px;
+    max-width: 305px;
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+
     justify-content: space-between;
     box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
       -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+
+    max-height: 879px;
   }
   &--hide {
     display: none;
@@ -72,10 +74,4 @@
   font-weight: 700;
   line-height: 32px;
   letter-spacing: -0.6px;
-}
-
-@media (max-height: 768px) {
-  .burger-menu--aside {
-    height: inherit;
-  }
 }

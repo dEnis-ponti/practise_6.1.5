@@ -1,0 +1,10 @@
+.prices {
+  &__link {
+    display: grid;
+    grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+  }
+  &__item--head {
+    display: grid;
+    grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+  }
+}
