@@ -1,0 +1,12 @@
+.page {
+  font-family: 'TT Lakes', sans-serif;
+  &--center {
+    display: flex;
+    justify-content: center;
+    background-color: #f8f8f8;
+    height: 100%;
+  }
+  &__content {
+    max-width: 1156px;
+  }
+}

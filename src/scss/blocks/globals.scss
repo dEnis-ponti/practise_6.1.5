@@ -48,3 +48,44 @@
   border: none;
   background-color: initial;
 }
+
+.button--rounded {
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  padding: 4px 12px;
+  font-size: 0.8571rem;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 24px;
+  letter-spacing: 0.0107rem;
+  font-weight: bold;
+  background-color: $color-main;
+
+  border-radius: 16px;
+  &::after {
+    content: url(../img/main/button-rounded-ico.svg);
+    display: inline-block;
+    position: static;
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+  }
+}
+
+.show-more-btn {
+  display: inline-block;
+  padding: 16px 42px;
+  text-align: left;
+  width: fit-content;
+  position: relative;
+  background: initial;
+  border: initial;
+  &::before {
+    ::before {
+      content: url(../img/main/read-more-ico.svg);
+      transform: translateX(-20px);
+      display: inline-block;
+    }
+  }
+}

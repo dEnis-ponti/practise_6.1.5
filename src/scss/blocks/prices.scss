@@ -1,10 +1,28 @@
 .prices {
-  &__link {
+  &__item {
     display: grid;
     grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+    align-items: center;
+    &--head {
+      display: grid;
+      grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+      font-size: 1rem;
+      line-height: 16px;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
   }
-  &__item--head {
-    display: grid;
-    grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+  &__service-name,
+  &__service-cost,
+  &__service-schedule {
+    margin: 23px 0;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    &--head {
+      margin: 16px 0;
+      color: $text-color--muted;
+    }
+  }
+  &__order-btn {
   }
 }

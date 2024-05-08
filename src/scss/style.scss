@@ -1,6 +1,8 @@
 @import 'fonts.scss';
 @import 'variables.scss';
 
+@import './blocks/page.scss';
+
 @import './blocks/globals.scss';
 @import './blocks/header.scss';
 @import './blocks/burger.scss';
@@ -9,18 +11,3 @@
 @import './blocks/services.scss';
 @import './blocks/prices.scss';
 @import './blocks/footer.scss';
-
-.page {
-  font-family: 'TT Lakes', sans-serif;
-  &--center {
-    display: flex;
-    justify-content: center;
-    background-color: #f8f8f8;
-    height: 100%;
-  }
-  &__content {
-    max-width: 1120px;
-  }
-}
-
-/* *Local styles* */

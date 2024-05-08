@@ -73,23 +73,6 @@
   display: none;
 }
 
-.main__read-more-btn {
-  display: inline-block;
-  padding: 16px 42px;
-}
-
-.read-more-btn {
-  text-align: left;
-  width: fit-content;
-  position: relative;
-}
-
-.read-more-btn::before {
-  content: url(../img/main/read-more-ico.svg);
-  transform: translateX(-20px);
-  display: inline-block;
-}
-
 .image {
   width: 100vw;
   left: 0;
@@ -143,9 +126,6 @@
   .content__col-image {
     padding: 0 24px 24px 0;
   }
-  .main__read-more-btn {
-    padding: 10px 53px;
-  }
 }
 
 @media (min-width: 1120px) {
@@ -168,12 +148,6 @@
   }
   .main__paragraph {
     padding: 0 33px 0 25px;
-  }
-  .main__read-more-btn {
-    padding: 14px 49px;
-  }
-  .read-more-btn::before {
-    transform: translateX(-18px);
   }
   .content__col-image {
     transform: translateX(-10px);

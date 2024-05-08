@@ -10,13 +10,13 @@
     <title>Practise_6.1.5</title>
   </head>
   <body class="page page--center">
-    <aside class="burger-menu burger-menu--aside burger-menu--hide">
+    <aside class="burger-menu burger-menu--aside">
       <header class="header burger-menu__header">
         <div class="header__container header__container--burger-menu">
           <div
             class="header-col header__left-col header__left-col--burger-menu"
           >
-            <button class="burger-close button">
+            <button class="burger-menu__close-btn button">
               <div class="ico">
                 <img
                   class="ico__vector"
@@ -26,9 +26,8 @@
             </button>
             <a href="#" class="burger-menu__logo header__logo logo">
               <img
-                src="./assets/img/logo-pic.png"
+                src="./img/header/logo-ico.svg"
                 alt="логотип CPS"
-                srcset="./assets/img/logo-ico.svg"
                 class="logo__pic"
               />
             </a>
@@ -99,7 +98,7 @@
                   <img
                     class="ico__vector"
                     src="./img/header/call-ico.svg"
-                    alt=""
+                    alt="заказать звонок"
                   />
                 </div>
               </a>
@@ -109,8 +108,8 @@
                 <div class="ico">
                   <img
                     class="ico__vector"
-                    src="./assets/img/chat-ico.svg"
-                    alt=""
+                    src="./img/header/chat-ico.svg"
+                    alt="открыть чат"
                   />
                 </div>
               </a>
@@ -120,8 +119,8 @@
                 <div class="ico">
                   <img
                     class="ico__vector"
-                    src="./assets/img/profile-ico.svg"
-                    alt=""
+                    src="./img/header/profile-ico.svg"
+                    alt="открыть профиль"
                   />
                 </div>
               </a>
@@ -301,7 +300,7 @@
                   близким.
                 </p>
               </div>
-              <button class="main__read-more-btn read-more-btn link"
+              <button class="main__show-more-btn show-more-btn link"
                 >Читать далее</button
               >
             </div>
@@ -387,42 +386,39 @@
             </div>
             <template id="price-template">
               <li class="prices__item">
-                <a class="prices__link link" href="#">
-                  <h4 class="prices__service-name">Диагностика</h4>
-                  <span class="prices__service-cost">Бесплатно</span>
-                  <span class="prices__service-schedule">30 мин</span>
-                  <button class="service-order-btn">Заказать</button>
-                </a>
+                <h4 class="prices__service-name">Диагностика</h4>
+                <span class="prices__service-cost">Бесплатно</span>
+                <span class="prices__service-schedule">30 мин</span>
+                <button class="prices__order-btn button button--rounded"
+                  >Заказать</button
+                >
               </li>
             </template>
             <template id="swiper-template-prices">
               <li class="prices__item swiper-slide">
-                <a class="prices__link link" href="#">
-                  <h4 class="prices__service-name">Диагностика</h4>
-                  <span class="prices__service-cost">Бесплатно</span>
-                  <span class="prices__service-schedule">30 мин</span>
-                  <button class="service-order-btn">Заказать</button>
-                </a>
+                <h4 class="prices__service-name">Диагностика</h4>
+                <span class="prices__service-cost">Бесплатно</span>
+                <span class="prices__service-schedule">30 мин</span>
+                <button class="prices__order-btn button button--rounded"
+                  >Заказать</button
+                >
               </li>
             </template>
             <div class="prices__slider prices__slider--show">
               <ul class="prices__list list-reset">
                 <li class="prices__item prices__item--head">
                   <h4 class="prices__service-name prices__service-name--head"
-                    >Диагностика</h4
+                    >Ремонтные услуги</h4
                   >
                   <span class="prices__service-cost prices__service-cost--head"
-                    >Бесплатно</span
+                    >Цена</span
                   >
                   <span
                     class="prices__service-schedule prices__service-schedule--head"
-                    >30 мин</span
+                    >Срок</span
                   >
                 </li></ul
               >
-              <button class="prices__show-more show-more-btn link">
-                Показать все
-              </button>
             </div>
             <div
               class="prices__slider-mobile prices__slider-mobile--hide swiper mySwiper list-reset"
