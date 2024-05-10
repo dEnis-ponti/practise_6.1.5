@@ -9,4 +9,9 @@
   &__content {
     max-width: 1156px;
   }
+  &__modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
