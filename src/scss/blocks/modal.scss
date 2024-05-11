@@ -1,6 +1,35 @@
 .modal {
+  display: flex;
+  flex-direction: column;
   z-index: 10000;
   height: 100vh;
   max-width: 440px;
   background-color: #fff;
+  &--space {
+    padding: 40px 32px;
+  }
+  &__headline {
+    font-weight: 700;
+    font-size: 1.7143rem;
+    line-height: 2.2857rem;
+    letter-spacing: -0.6px;
+    color: $text-color;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    border-radius: 8px;
+    font-weight: 500;
+    color: $text-color--input;
+    font-size: 1.1429rem;
+    line-height: 1.7143rem;
+    letter-spacing: -0.2px;
+    padding: 12px 16px;
+    border: solid 1px $color-border;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
 }

@@ -20,6 +20,21 @@
   }
 }
 
+.text {
+  &--highlighted {
+    &::before {
+      content: '';
+      width: 4px;
+      height: 40px;
+      border-radius: 0 4px 4px 0;
+      background-color: #41f6d7;
+      display: inline-block;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+
 .paragraph {
   color: #1b1c21;
 }

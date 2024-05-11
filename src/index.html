@@ -249,7 +249,9 @@
       </header>
       <main class="main">
         <div class="main__container">
-          <h1 class="main__headline text">Услуги и сервисы</h1>
+          <h1 class="main__headline text text--highlighted"
+            >Услуги и сервисы</h1
+          >
           <nav class="main__nav">
             <ul class="main__slide-menu slide-menu list-reset">
               <li class="slide-menu__item">
@@ -448,20 +450,53 @@
         >
       </footer>
     </div>
-    <div class="page__modal modal" id="modal-feedback">
-      <h4 class="modal__headline">Обратная связь</h4>
+    <div class="page__modal modal modal--space" id="modal-feedback">
+      <button class="modal__close-btn button">
+        <div class="ico">
+          <img
+            class="ico__vector"
+            src="./img/aside/burger-menu-close-ico.svg"
+          />
+        </div>
+      </button>
+      <h4 class="modal__headline text text--highlighted">Обратная связь</h4>
       <form method="post" class="modal__form">
-        <input type="text" name="" id="" />
-        <input type="text" name="" id="" />
-        <input type="text" name="" id="" />
+        <input class="modal__input" type="text" name="name" placeholder="Имя" />
+        <input
+          class="modal__input"
+          type="tel"
+          name="tel"
+          placeholder="Телефон"
+        />
+        <input
+          class="modal__input"
+          type="email"
+          name="email"
+          placeholder="Электронная почта"
+        />
+        <textarea
+          class="modal__input"
+          placeholder="Сообщение"
+          class="input input-textarea"
+          name="message"
+          cols="40"
+          rows="3"
+        >
+Сообщение
+        </textarea>
+
         <p class="modal__privacy-policy"
           >Нажимая “отправить”, вы даете согласие на
           <a href="#" class="modal__link link">обработку персональных данных</a>
           и соглашаетесь с нашей
-          <a href="#" class="modal__link link"
-            >политикой конфиденциальности</a
-          ></p
-        >
+          <a href="#" class="modal__link link">политикой конфиденциальности</a>
+        </p>
+
+        <input
+          class="button button--rounded"
+          type="submit"
+          placeholder="Отправить"
+        />
       </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
