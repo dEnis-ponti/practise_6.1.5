@@ -1,12 +1,32 @@
 .modal {
-  display: flex;
-  flex-direction: column;
-  z-index: 10000;
-  height: 100vh;
-  max-width: 440px;
-  background-color: #fff;
-  &--space {
-    padding: 40px 32px;
+  &__dialog {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    height: 100vh;
+    max-width: 440px;
+    background-color: #fff;
+    &--space {
+      padding: 40px 32px;
+      box-shadow: 16px 0px 52px 0 #0e1850, 0 0 0 100vw #fffffff2;
+      filter: initial;
+      &::before {
+        content: '';
+        width: 1px;
+        height: 100vh;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #d9fff5;
+        z-index: 1001;
+      }
+    }
+  }
+  &--hide {
+    visibility: hidden;
   }
   &__headline {
     font-weight: 700;
@@ -31,5 +51,18 @@
     &:not(:last-child) {
       margin-bottom: 16px;
     }
+  }
+  &__link {
+    color: $color-main;
+    font-size: 1rem;
+    line-height: 1.1429rem;
+    letter-spacing: 0;
+  }
+  &__send-btn {
+    align-self: end;
+  }
+  &__close-btn {
+    display: inline-block;
+    width: fit-content;
   }
 }

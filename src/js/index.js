@@ -1,11 +1,13 @@
 import 'normalize.css'
 import '../scss/style.scss'
 import initSliders from './slider.js'
+import initModals from './modal.js'
 
 console.log('Works!')
 
 window.addEventListener('DOMContentLoaded', function () {
   initSliders()
+  initModals()
 
   // let burgerBtn = document.querySelector('#burger-btn')
   // let burgerMenu = document.querySelector('.burger-menu')

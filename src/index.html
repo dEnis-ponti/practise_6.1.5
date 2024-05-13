@@ -93,7 +93,7 @@
         <nav class="contacts">
           <ul class="links-list links-list--burger-menu list-reset">
             <li class="links-list__item">
-              <a href="#" class="links-list__link">
+              <a href="#callback" class="links-list__link" id="callback">
                 <div class="ico">
                   <img
                     class="ico__vector"
@@ -104,7 +104,7 @@
               </a>
             </li>
             <li class="links-list__item">
-              <a href="#" class="links-list__link">
+              <a href="#feedback" class="links-list__link" id="feedback">
                 <div class="ico">
                   <img
                     class="ico__vector"
@@ -450,54 +450,95 @@
         >
       </footer>
     </div>
-    <div class="page__modal modal modal--space" id="modal-feedback">
-      <button class="modal__close-btn button">
-        <div class="ico">
-          <img
-            class="ico__vector"
-            src="./img/aside/burger-menu-close-ico.svg"
+    <div class="page__modal modal modal--hide" id="modal-feedback">
+      <div class="modal__dialog modal__dialog--space">
+        <button class="modal__close-btn button">
+          <div class="ico">
+            <img
+              class="ico__vector"
+              src="./img/aside/burger-menu-close-ico.svg"
+            />
+          </div>
+        </button>
+        <h4 class="modal__headline text text--highlighted">Обратная связь</h4>
+        <form method="post" class="modal__form">
+          <input
+            class="modal__input"
+            type="text"
+            name="name"
+            placeholder="Имя"
           />
-        </div>
-      </button>
-      <h4 class="modal__headline text text--highlighted">Обратная связь</h4>
-      <form method="post" class="modal__form">
-        <input class="modal__input" type="text" name="name" placeholder="Имя" />
-        <input
-          class="modal__input"
-          type="tel"
-          name="tel"
-          placeholder="Телефон"
-        />
-        <input
-          class="modal__input"
-          type="email"
-          name="email"
-          placeholder="Электронная почта"
-        />
-        <textarea
-          class="modal__input"
-          placeholder="Сообщение"
-          class="input input-textarea"
-          name="message"
-          cols="40"
-          rows="3"
-        >
+          <input
+            class="modal__input"
+            type="tel"
+            name="tel"
+            placeholder="Телефон"
+          />
+          <input
+            class="modal__input"
+            type="email"
+            name="email"
+            placeholder="Электронная почта"
+          />
+          <textarea
+            class="modal__input"
+            placeholder="Сообщение"
+            class="input input-textarea"
+            name="message"
+            cols="40"
+            rows="3"
+          >
 Сообщение
-        </textarea>
-
-        <p class="modal__privacy-policy"
-          >Нажимая “отправить”, вы даете согласие на
-          <a href="#" class="modal__link link">обработку персональных данных</a>
-          и соглашаетесь с нашей
-          <a href="#" class="modal__link link">политикой конфиденциальности</a>
-        </p>
-
-        <input
-          class="button button--rounded"
-          type="submit"
-          placeholder="Отправить"
-        />
-      </form>
+          </textarea>
+          <p class="modal__privacy-policy"
+            >Нажимая “отправить”, вы даете согласие на
+            <a href="#" class="modal__link link"
+              >обработку персональных данных</a
+            >
+            и соглашаетесь с нашей
+            <a href="#" class="modal__link link"
+              >политикой конфиденциальности</a
+            >
+          </p>
+          <button type="submit" class="modal__send-btn button button--rounded"
+            >Отправить</button
+          >
+        </form>
+      </div>
+    </div>
+    <div class="page__modal modal modal--hide" id="modal-callback">
+      <div class="modal__dialog modal__dialog--space">
+        <button class="modal__close-btn button">
+          <div class="ico">
+            <img
+              class="ico__vector"
+              src="./img/aside/burger-menu-close-ico.svg"
+            />
+          </div>
+        </button>
+        <h4 class="modal__headline text text--highlighted">Заказать звонок</h4>
+        <form method="post" class="modal__form">
+          <input
+            class="modal__input"
+            type="tel"
+            name="tel"
+            placeholder="Телефон"
+          />
+          <p class="modal__privacy-policy"
+            >Нажимая “отправить”, вы даете согласие на
+            <a href="#" class="modal__link link"
+              >обработку персональных данных</a
+            >
+            и соглашаетесь с нашей
+            <a href="#" class="modal__link link"
+              >политикой конфиденциальности</a
+            >
+          </p>
+          <button type="submit" class="modal__send-btn button button--rounded"
+            >Отправить</button
+          >
+        </form>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>

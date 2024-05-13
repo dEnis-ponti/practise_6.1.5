@@ -6,12 +6,17 @@
     background-color: #f8f8f8;
     height: 100%;
   }
+  &--modal-on {
+    overflow: hidden;
+  }
   &__content {
     max-width: 1156px;
   }
   &__modal {
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
   }
 }
