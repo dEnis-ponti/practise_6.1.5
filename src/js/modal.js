@@ -21,6 +21,7 @@ let initModals = function () {
       console.dir(e.target)
       if (e.target === modalBlock) {
         modalBlock.classList.add('modal--hide')
+
         page.classList.remove('page--modal-on')
       }
     })

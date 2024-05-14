@@ -9,14 +9,14 @@
 .ico {
   display: flex;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   border-radius: 60px;
   background: rgb(255, 62, 121);
-  padding: 12px;
+  padding: 10px;
   &__vector {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -46,6 +46,10 @@
   letter-spacing: -0.2px;
   color: #7e7e82;
   text-decoration: none;
+  &--burger-menu {
+    color: #1b1c21;
+    font-size: 1rem;
+  }
 }
 
 .link:hover,
