@@ -10,7 +10,7 @@
     <title>Practise_6.1.5</title>
   </head>
   <body class="page page--center">
-    <aside class="burger-menu burger-menu--aside">
+    <aside class="burger-menu burger-menu--aside burger-menu--hide">
       <header class="header burger-menu__header">
         <div class="header__container header__container--burger-menu">
           <div
@@ -47,14 +47,14 @@
         <nav class="burger-menu__nav">
           <ul class="burger-menu__nav-list nav-list list-reset">
             <li class="nav-list__item">
-              <a href="#" class="nav-list__link link link--burger-menu text"
+              <a
+                href="#"
+                class="nav-list__link link link--burger-menu text text--highlighted nav-list__link--active"
                 >Ремонт техники</a
               >
             </li>
             <li class="nav-list__item nav-list__item--current">
-              <a
-                href="#"
-                class="nav-list__link link link--burger-menu text nav-list__link--active"
+              <a href="#" class="nav-list__link link link--burger-menu text"
                 >Услуги и сервисы</a
               >
             </li>
@@ -145,17 +145,21 @@
             <li class="nav-list__item">
               <a
                 href="#"
-                class="nav-list__link link text nav-list__link--active"
+                class="nav-list__link link link--language text nav-list__link--active"
                 >ru</a
               >
             </li>
             <li class="nav-list__item">
-              <a href="#" class="nav-list__link link link--burger-menu text"
+              <a
+                href="#"
+                class="nav-list__link link link--language link--burger-menu text"
                 >en</a
               >
             </li>
             <li class="nav-list__item">
-              <a href="#" class="nav-list__link link link--burger-menu text"
+              <a
+                href="#"
+                class="nav-list__link link link--language link--burger-menu text"
                 >ch</a
               >
             </li>
@@ -388,32 +392,17 @@
               <div class="servicesSwiper-pagination"></div>
             </div>
           </section>
-          <section class="prices">
+          <section class="main__prices prices">
             <div class="prices__header">
-              <h3 class="prices__headline">Цены на услуги</h3>
+              <h3 class="prices__headline headline headline--h2"
+                >Цены на услуги</h3
+              >
             </div>
-            <template id="price-template">
-              <li class="prices__item">
-                <h4 class="prices__service-name">Диагностика</h4>
-                <span class="prices__service-cost">Бесплатно</span>
-                <span class="prices__service-schedule">30 мин</span>
-                <button class="prices__order-btn button button--rounded"
-                  >Заказать</button
-                >
-              </li>
-            </template>
-            <template id="swiper-template-prices">
-              <li class="prices__item swiper-slide">
-                <h4 class="prices__service-name">Диагностика</h4>
-                <span class="prices__service-cost">Бесплатно</span>
-                <span class="prices__service-schedule">30 мин</span>
-                <button class="prices__order-btn button button--rounded"
-                  >Заказать</button
-                >
-              </li>
-            </template>
-            <div class="prices__slider prices__slider--show">
-              <ul class="prices__list list-reset">
+
+            <div
+              class="prices__slider swiper pricesSwiper prices__slider--show"
+            >
+              <ul class="prices__list swiper-wrapper list-reset">
                 <li class="prices__item prices__item--head">
                   <h4 class="prices__service-name prices__service-name--head"
                     >Ремонтные услуги</h4
@@ -425,14 +414,56 @@
                     class="prices__service-schedule prices__service-schedule--head"
                     >Срок</span
                   >
-                </li></ul
-              >
+                </li>
+                <li class="prices__item swiper-slide">
+                  <h4 class="prices__service-name"
+                    >Тестирование с выдачей технического заключения</h4
+                  >
+                  <span class="prices__service-cost">1000 ₽</span>
+                  <span class="prices__service-schedule">30-120 мин</span>
+                  <button class="prices__order-btn button button--rounded"
+                    >Заказать</button
+                  >
+                </li>
+                <li class="prices__item swiper-slide">
+                  <h4 class="prices__service-name">Диагностика</h4>
+                  <span class="prices__service-cost">Бесплатно</span>
+                  <span class="prices__service-schedule">30 мин</span>
+                  <button class="prices__order-btn button button--rounded"
+                    >Заказать</button
+                  >
+                </li>
+                <li class="prices__item swiper-slide">
+                  <h4 class="prices__service-name">Замена дисплея</h4>
+                  <span class="prices__service-cost">1000 ₽</span>
+                  <span class="prices__service-schedule">30 мин</span>
+                  <button class="prices__order-btn button button--rounded"
+                    >Заказать</button
+                  >
+                </li>
+                <li class="prices__item swiper-slide">
+                  <h4 class="prices__service-name">Диагностика</h4>
+                  <span class="prices__service-cost">1000 ₽</span>
+                  <span class="prices__service-schedule">30 мин</span>
+                  <button class="prices__order-btn button button--rounded"
+                    >Заказать</button
+                  >
+                </li>
+                <li class="prices__item swiper-slide">
+                  <h4 class="prices__service-name">Диагностика</h4>
+                  <span class="prices__service-cost">1000 ₽</span>
+                  <span class="prices__service-schedule">30 мин</span>
+                  <button class="prices__order-btn button button--rounded"
+                    >Заказать</button
+                  >
+                </li>
+              </ul>
             </div>
             <div
-              class="prices__slider-mobile prices__slider-mobile--hide swiper mySwiper list-reset"
+              class="prices__slider-mobile prices__slider-mobile--hide list-reset"
             >
               <div class="prices__list swiper-wrapper"> </div>
-              <div class="swiper-pagination"></div>
+              <div class="pricesSwiper-pagination"></div>
             </div>
             <p class="prices__note"
               >Все цены указаны с учетом НДС. Стоимость ремонта указана на
@@ -447,16 +478,17 @@
       </main>
       <footer class="footer page__footer"
         ><span class="footer__text"
-          >© 2019 CPS Разработано командой Apesong
+          ><span class="year">© 2019 CPS</span> Разработано командой Apesong
         </span>
-        <a href="#" class="privacy-policy">Политика конфиденциальности</a
+        <a href="#" class="footer__text privacy-policy link"
+          >Политика конфиденциальности</a
         ><span class="footer__text"
           >Информация, размещенная на данной странице, не является публичной
           офертой</span
         >
       </footer>
     </div>
-    <div class="page__modal modal modal--hide" id="modal-feedback">
+    <div class="page__modal modal" id="modal-feedback">
       <div class="modal__dialog modal__dialog--space">
         <button class="modal__close-btn button">
           <div class="ico">

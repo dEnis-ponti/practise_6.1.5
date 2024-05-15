@@ -1,28 +1,114 @@
 .prices {
+  &__header {
+    padding: 0 16px;
+  }
+  &__list {
+    display: flex;
+    padding: 0 8px;
+  }
   &__item {
-    display: grid;
-    grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
-    align-items: center;
-    &--head {
+    @media (min-width: 0px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: [name] 2fr [cost] 0.25fr [scheduleAndOrder] 1.25fr;
+      align-items: center;
+      padding: 16px;
+      border-radius: 6px;
+      background-color: #fff;
+      &--head {
+        display: none;
+      }
+    }
+    @media (min-width: 768px) {
       display: grid;
       grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
-      font-size: 1rem;
-      line-height: 16px;
-      letter-spacing: 0;
-      font-weight: 500;
+      align-items: center;
+      &--head {
+        display: grid;
+        grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+        font-size: 1rem;
+        line-height: 16px;
+        letter-spacing: 0;
+        font-weight: 500;
+      }
     }
+  }
+  &__service-name {
+    grid-area: name / span 2;
+    &::before {
+      content: 'Ремонтные услуги';
+    }
+  }
+  &__service-cost {
+    grid-area: cost / 1;
+    &::before {
+      content: 'Цена';
+    }
+  }
+  &__service-schedule {
+    grid-area: scheduleAndOrder / 1;
+    text-wrap: nowrap;
+    &::before {
+      content: 'Срок';
+    }
+  }
+  &__order-btn {
+    grid-area: 3;
+    font-size: 0.75rem;
+    letter-spacing: -0.15px;
+    display: flex;
+    margin: 20px 0 0 28px;
   }
   &__service-name,
   &__service-cost,
   &__service-schedule {
-    margin: 23px 0;
+    font-size: 0.875rem;
+    font-weight: 400;
     line-height: 18px;
     letter-spacing: 0.2px;
-    &--head {
-      margin: 16px 0;
-      color: $text-color--muted;
+    &::before {
+      display: block;
+      margin-bottom: 4px;
+      text-wrap: nowrap;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0;
     }
   }
-  &__order-btn {
+  &__service-cost,
+  &__service-schedule {
+    @media (min-width: 1426px) {
+      margin: 23px 0;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      &--head {
+        margin: 16px 0;
+        color: $text-color--muted;
+      }
+    }
   }
+  &__note {
+    padding: 0 16px;
+    font-size: 0.875rem;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+  }
+  &__get-offer {
+    display: inline-block;
+    padding: 0 16px;
+    font-weight: 500;
+    color: $text-color;
+    &::after {
+      content: url('../img/main/item-more-ico.svg');
+      display: inline-block;
+      transform: translateY(2px);
+      margin-left: 8px;
+    }
+  }
+}
+.pricesSwiper-pagination {
+  bottom: var(--swiper-pagination-bottom, 34px) !important;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
 }

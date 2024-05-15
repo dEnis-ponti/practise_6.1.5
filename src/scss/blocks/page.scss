@@ -10,7 +10,7 @@
     overflow: hidden;
   }
   &__content {
-    @media (min-width: 320px) {
+    @media (min-width: 0px) {
       max-width: 320px;
     }
     @media (min-width: 1426px) {
@@ -23,5 +23,11 @@
     width: 100vw;
     height: 100vh;
     z-index: 1000;
+  }
+  &__footer {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 45px;
+    padding: 0 16px;
   }
 }

@@ -6,7 +6,7 @@
   padding: 16px 32px;
   background: linear-gradient(to right, #f8f8f8 0%, #ffffff 100%);
   height: 56px;
-  @media (min-width: 320px) {
+  @media (min-width: 0px) {
     padding: 0 16px;
   }
 }
@@ -51,7 +51,7 @@
 
 .brands__logo {
   display: block;
-  @media (min-width: 320px) {
+  @media (min-width: 0px) {
     margin-right: 59px;
   }
 }

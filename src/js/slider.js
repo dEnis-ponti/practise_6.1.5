@@ -243,65 +243,12 @@ let initSliders = function () {
   }
 
   let initPricecSliders = function () {
-    let pricesSlider = document.querySelector('.prices__slider')
-    let pricesSliderMobile = document.querySelector('.prices__slider-mobile')
-    let pricesList = document.querySelector('.prices__list')
-    let pricesListMobile = pricesSliderMobile.querySelector('.prices__list')
-
-    let pricesItems = pricesList.children
-    let pricesItemsMobile = pricesListMobile.children
-    let priceItemTemplateMobile = document
-      .querySelector('#swiper-template-prices')
-      .content.querySelector('.prices__item')
-    let priceItemTemplate = document.querySelector('#price-template').content
-    let priceItem = priceItemTemplate.querySelector('.prices__item')
-    let showMoreBtn = document.querySelector('.show-more-btn')
-    let showMoreBtnText = showMoreBtn.textContent
-
-    let setSliderItems = function (numOfElems) {
-      let screenWidth = window.innerWidth
-      if (screenWidth >= 768) {
-        for (let i = pricesItems.length; i <= numOfElems; i++) {
-          let priceItemDuplicate = priceItem.cloneNode(true)
-          pricesList.appendChild(priceItemDuplicate)
-          let priceServiceName = pricesItems[i].querySelector(
-            '.prices__service-name'
-          )
-        }
-      } else if (screenWidth < 768) {
-        for (let i = pricesItemsMobile.length; i <= numOfElems; i++) {
-          let priceItemDuplicate = priceItemTemplateMobile.cloneNode(true)
-          pricesListMobile.appendChild(priceItemDuplicate)
-          let priceLogo = pricesItemsMobile[i].querySelector('.prices__logo')
-          let priceLogoSrc = priceLogo.src
-          let validpriceLogoSrc = priceLogoSrc.replace(
-            'price-1.png',
-            'price-' + (i + 1) + '.png'
-          )
-          priceLogo.src = validpriceLogoSrc
-        }
-      }
-    }
-
-    let adjustSliderItems = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth >= 1120) {
-        setSliderItems(7)
-      } else if (screenWidth >= 768) {
-        setSliderItems(5)
-      } else if (screenWidth < 768) {
-        setSliderItems(8)
-      }
-    }
-    adjustSliderItems()
-    window.addEventListener('resize', adjustSliderItems)
-
     let initializeSwiper = function () {
       let screenWidth = window.innerWidth
       if (screenWidth < 768) {
         console.log('swiper is initialized')
-        const swiper = new Swiper('.mySwiper', {
-          slidesPerView: 1.5,
+        const swiper = new Swiper('.pricesSwiper', {
+          slidesPerView: 1.1,
           spaceBetween: 16,
           centerInsufficientSlides: false,
           // Optional parameters
@@ -310,7 +257,7 @@ let initSliders = function () {
 
           // If we need pagination
           pagination: {
-            el: '.swiper-pagination',
+            el: '.pricesSwiper-pagination',
             clickable: true
           },
           slideToClickedSlide: true,
@@ -319,46 +266,9 @@ let initSliders = function () {
       }
     }
     initializeSwiper()
-    let validateSlider = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth < 768) {
-        pricesSlider.classList.add('prices__slider--hide')
-        pricesSlider.classList.remove('prices__slider--show')
-        pricesSliderMobile.classList.remove('prices__slider-mobile--hide')
-        pricesSliderMobile.classList.add('prices__slider-mobile--show')
-      } else if (screenWidth >= 768) {
-        pricesSlider.classList.add('prices__slider--show')
-        pricesSlider.classList.remove('prices__slider--hide')
-        pricesSliderMobile.classList.add('prices__slider-mobile--hide')
-        pricesSliderMobile.classList.remove('prices__slider-mobile--show')
-      }
-    }
-    validateSlider()
-    window.addEventListener('resize', validateSlider)
-
-    showMoreBtn.addEventListener('click', function () {
-      if (!showMoreBtn.classList.contains('show-more-btn--active')) {
-        showMoreBtn.textContent = 'Скрыть'
-        showMoreBtn.classList.add('show-more-btn--active')
-        let numOfElems = pricesItems.length + 2
-        setSliderItems(numOfElems)
-      } else {
-        showMoreBtn.textContent = showMoreBtnText
-        showMoreBtn.classList.remove('show-more-btn--active')
-        let itemsToDisplay = pricesItems.length - 3
-        console.log(itemsToDisplay)
-        for (let j = pricesItems.length; (j = itemsToDisplay); j--) {
-          if (pricesItems[j] != undefined) {
-            pricesItems[j].remove()
-          } else {
-            break
-          }
-        }
-      }
-    })
   }
-  return initBrandsSliders(), initServicesSliders()
-  // , initPricecSliders()
+  return initBrandsSliders(), initServicesSliders(), initPricecSliders()
+  // ,
 }
 
 export default initSliders
