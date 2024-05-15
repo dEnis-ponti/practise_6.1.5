@@ -11,6 +11,9 @@
     box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
       -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
     background-color: #fff;
+    @media (max-width: 1426px) {
+      display: none;
+    }
   }
   &--hide {
     display: none;
@@ -35,6 +38,7 @@
 .header__container--burger-menu {
   position: relative;
   display: flex;
+  justify-content: space-between;
   right: initial;
   top: initial;
   border-bottom: none;

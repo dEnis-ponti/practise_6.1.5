@@ -6,15 +6,12 @@
   padding: 16px 32px;
   background: linear-gradient(to right, #f8f8f8 0%, #ffffff 100%);
   height: 56px;
+  @media (min-width: 320px) {
+    padding: 0 16px;
+  }
 }
 
 .services__headline {
-  font-size: 1.14rem;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  text-transform: uppercase;
-  color: #7e7e82;
 }
 
 .services__slider {
@@ -91,14 +88,11 @@
 }
 
 @media (max-width: 1120px) {
-  .services__header {
-    padding: 16px 24px;
-  }
   .services__slider {
     margin: 24px;
   }
   .services__item {
-    padding: 16px;
+    padding: 32px 16px;
     width: 224px;
   }
   .services__list {
@@ -116,12 +110,24 @@
   .services__slider-mobile--show {
     display: block;
   }
+  .services__item--swiper {
+    height: 92px;
+  }
+  .services__link {
+    width: 208px;
+  }
+  .services__link::after {
+    margin-left: 80px;
+    align-self: flex-end;
+    transform: translateY(73px);
+    height: 20px;
+  }
 }
 
 /* Swiper */
 
 .services__slider-mobile {
-  padding: 16px 0 66px 0;
+  padding: 0 0 0 0 16px;
 }
 
 .swiper-wrapper {
@@ -142,16 +148,15 @@
   z-index: 100;
 }
 
-.swiper-slide {
-  width: 100vw;
-  height: 39px;
-}
 .swiper-slide:first-child {
   margin-left: 16px;
 }
 
-.swiper-pagination {
+.servicesSwiper-pagination {
   bottom: var(--swiper-pagination-bottom, 34px) !important;
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
 }
 
 .swiper-pagination-bullet {

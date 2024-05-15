@@ -61,17 +61,17 @@ let initSliders = function () {
       let screenWidth = window.innerWidth
       if (screenWidth < 768) {
         console.log('swiper is initialized')
-        const swiper = new Swiper('.mySwiper', {
-          slidesPerView: 1.5,
+        const swiper = new Swiper('.brandsSwiper', {
+          slidesPerView: 1.25,
           spaceBetween: 16,
-          centerInsufficientSlides: false,
+          centerInsufficientSlides: true,
           // Optional parameters
           direction: 'horizontal',
-          loop: true,
+          loop: false,
 
           // If we need pagination
           pagination: {
-            el: '.swiper-pagination',
+            el: '.brandsSwiper-pagination',
             clickable: true
           },
           slideToClickedSlide: true,
@@ -184,17 +184,17 @@ let initSliders = function () {
       let screenWidth = window.innerWidth
       if (screenWidth < 768) {
         console.log('swiper is initialized')
-        const swiper = new Swiper('.mySwiper', {
-          slidesPerView: 1.5,
+        const swiper = new Swiper('.servicesSwiper', {
+          slidesPerView: 1.25,
           spaceBetween: 16,
           centerInsufficientSlides: false,
           // Optional parameters
           direction: 'horizontal',
-          loop: true,
+          loop: false,
 
           // If we need pagination
           pagination: {
-            el: '.swiper-pagination',
+            el: '.servicesSwiper-pagination',
             clickable: true
           },
           slideToClickedSlide: true,
@@ -357,7 +357,8 @@ let initSliders = function () {
       }
     })
   }
-  return initBrandsSliders(), initServicesSliders(), initPricecSliders()
+  return initBrandsSliders(), initServicesSliders()
+  // , initPricecSliders()
 }
 
 export default initSliders

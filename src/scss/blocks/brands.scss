@@ -6,15 +6,12 @@
   padding: 16px 32px;
   background: linear-gradient(to right, #f8f8f8 0%, #ffffff 100%);
   height: 56px;
+  @media (min-width: 320px) {
+    padding: 0 16px;
+  }
 }
 
 .brands__headline {
-  font-size: 1.14rem;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  text-transform: uppercase;
-  color: #7e7e82;
 }
 
 .brands__slider {
@@ -42,7 +39,7 @@
   background-color: #fff;
   padding: 16px;
   width: 240px;
-  height: 72px;
+  height: 32px;
 }
 
 .brands__link {
@@ -54,6 +51,9 @@
 
 .brands__logo {
   display: block;
+  @media (min-width: 320px) {
+    margin-right: 59px;
+  }
 }
 .brands__link::after {
   content: url('../img/main/item-more-ico.svg');
@@ -91,9 +91,6 @@
 }
 
 @media (max-width: 1120px) {
-  .brands__header {
-    padding: 16px 24px;
-  }
   .brands__slider {
     margin: 24px;
   }
@@ -120,8 +117,8 @@
 
 /* Swiper */
 
-.brands__slider-mobile {
-  padding: 16px 0 66px 0;
+.swiper {
+  position: relative;
 }
 
 .swiper-wrapper {
@@ -142,7 +139,7 @@
   z-index: 100;
 }
 
-.swiper-slide {
+.brands__item--swiper {
   width: 100vw;
   height: 39px;
 }
@@ -150,14 +147,19 @@
   margin-left: 16px;
 }
 
-.swiper-pagination {
+.brandsSwiper-pagination {
   bottom: var(--swiper-pagination-bottom, 34px) !important;
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
 }
 
 .swiper-pagination-bullet {
   margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px) !important;
+  display: inline-block;
   width: 12px;
   height: 12px;
+  border-radius: 60px;
   background: #dddddd;
 }
 

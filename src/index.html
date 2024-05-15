@@ -32,7 +32,9 @@
               />
             </a>
           </div>
-          <div class="header-col header__right-col">
+          <div
+            class="header-col header__right-col header__right-col--burger-menu"
+          >
             <button class="search button">
               <div class="ico">
                 <img class="ico__vector" src="./img/aside/search-ico.svg" />
@@ -316,9 +318,11 @@
               </div>
             </div>
           </section>
-          <section class="brands">
+          <section class="main__brands brands">
             <div class="brands__header">
-              <h1 class="brands__headline">Ремонт техники различных брендов</h1>
+              <h1 class="brands__headline headline headline--h2"
+                >Ремонт техники различных брендов</h1
+              >
             </div>
             <template id="brand-template">
               <li class="brands__item">
@@ -332,7 +336,7 @@
               </li>
             </template>
             <template id="swiper-template-brands">
-              <li class="brands__item swiper-slide">
+              <li class="brands__item brands__item--swiper swiper-slide">
                 <a class="brands__link" href="#">
                   <img
                     src="../img/main/brands/brand-1.png"
@@ -349,15 +353,17 @@
               </button>
             </div>
             <div
-              class="brands__slider-mobile brands__slider-mobile--hide swiper mySwiper list-reset"
+              class="brands__slider-mobile brands__slider-mobile--hide swiper brandsSwiper list-reset"
             >
               <div class="brands__list swiper-wrapper"> </div>
-              <div class="swiper-pagination"></div>
+              <div class="brandsSwiper-pagination"></div>
             </div>
           </section>
-          <section class="services">
+          <section class="main__services services">
             <div class="services__header">
-              <h3 class="services__headline">Ремонт различных видов техники</h3>
+              <h3 class="services__headline headline headline--h2"
+                >Ремонт различных видов техники</h3
+              >
             </div>
             <template id="service-template">
               <li class="services__item">
@@ -365,7 +371,7 @@
               </li>
             </template>
             <template id="swiper-template-services">
-              <li class="services__item swiper-slide">
+              <li class="services__item services__item--swiper swiper-slide">
                 <a class="services__link link" href="#">Ремонт устройства #1</a>
               </li>
             </template>
@@ -376,10 +382,10 @@
               </button>
             </div>
             <div
-              class="services__slider-mobile services__slider-mobile--hide swiper mySwiper list-reset"
+              class="services__slider-mobile services__slider-mobile--hide swiper servicesSwiper list-reset"
             >
               <div class="services__list swiper-wrapper"> </div>
-              <div class="swiper-pagination"></div>
+              <div class="servicesSwiper-pagination"></div>
             </div>
           </section>
           <section class="prices">
