@@ -13,6 +13,9 @@
     @media (min-width: 0px) {
       max-width: 320px;
     }
+    @media (min-width: 320px) {
+      max-width: 100vw;
+    }
     @media (min-width: 1426px) {
       max-width: 1156px;
     }
@@ -28,6 +31,7 @@
     flex-direction: column;
     text-align: center;
     margin-top: 45px;
+    margin-bottom: 19px;
     padding: 0 16px;
   }
 }

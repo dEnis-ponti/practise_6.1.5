@@ -95,7 +95,7 @@
         <nav class="contacts">
           <ul class="links-list links-list--burger-menu list-reset">
             <li class="links-list__item">
-              <a href="#callback" class="links-list__link" id="callback">
+              <a href="#callback" class="links-list__link callback-btn">
                 <div class="ico">
                   <img
                     class="ico__vector"
@@ -106,7 +106,7 @@
               </a>
             </li>
             <li class="links-list__item">
-              <a href="#feedback" class="links-list__link" id="feedback">
+              <a href="#feedback" class="links-list__link feedback-btn">
                 <div class="ico">
                   <img
                     class="ico__vector"
@@ -191,7 +191,7 @@
           <nav class="header__links contacts header__contacts">
             <ul class="links-list list-reset">
               <li class="links-list__item">
-                <a href="#" class="links-list__link">
+                <a href="#callback" class="links-list__link callback-btn">
                   <div class="ico">
                     <img
                       class="ico__vector"
@@ -202,7 +202,7 @@
                 </a>
               </li>
               <li class="links-list__item">
-                <a href="#" class="links-list__link">
+                <a href="#feedback" class="links-list__link feedback-btn">
                   <div class="ico">
                     <img
                       class="ico__vector"
@@ -293,7 +293,7 @@
             </ul>
           </nav>
           <section class="main__content content">
-            <div class="content__col content__col_text">
+            <div class="content__col content__col--paragraph">
               <div class="main__paragraphs-wrapper">
                 <p class="main__paragraph paragraph main__paragraph-first"
                   >Мы являемся авторизованным сервисным центром по ремонту
@@ -308,7 +308,9 @@
                   близким.
                 </p>
               </div>
-              <button class="main__show-more-btn show-more-btn link"
+              <button
+                id="show-more-paragraps-btn"
+                class="main__show-more-btn show-more-btn link"
                 >Читать далее</button
               >
             </div>
@@ -488,7 +490,7 @@
         >
       </footer>
     </div>
-    <div class="page__modal modal" id="modal-feedback">
+    <div class="page__modal modal modal--hide" id="modal-feedback">
       <div class="modal__dialog modal__dialog--space">
         <button class="modal__close-btn button">
           <div class="ico">

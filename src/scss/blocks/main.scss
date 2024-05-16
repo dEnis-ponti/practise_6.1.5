@@ -83,6 +83,11 @@
     @media (min-width: 0px) {
       margin: 0;
     }
+    @media (min-width: 320px) {
+      font-size: 0.875rem;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+    }
     @media (min-width: 768px) {
       padding: 0 40px 0 24px;
     }
@@ -156,7 +161,12 @@
   width: 100vw;
   left: 0;
   bottom: 0;
-  aspect-ratio: 320 / 176;
+  @media (min-width: 0) {
+    aspect-ratio: 320 / 176;
+  }
+  @media (min-width: 320px) {
+    aspect-ratio: 365 / 208;
+  }
   @media (min-width: 768px) {
     width: auto;
     border-radius: 6px;
@@ -170,9 +180,17 @@
 .content {
   &__col {
     flex-basis: 50%;
+    &--paragraph {
+      @media (min-width: 320px) {
+        min-width: 50%;
+      }
+    }
   }
   &__col-image {
     padding: 0 24px 24px 0;
+    @media (min-width: 320px) {
+      height: 208px;
+    }
     @media (min-width: 1120px) {
       transform: translateX(-10px);
     }

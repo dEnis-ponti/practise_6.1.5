@@ -49,6 +49,9 @@
   &__form {
     display: flex;
     flex-direction: column;
+    @media (min-width: 0) {
+      width: 292px;
+    }
   }
   &__input {
     border-radius: 8px;
@@ -79,6 +82,10 @@
   }
   &__send-btn {
     align-self: end;
+    @media (min-width: 0) {
+      font-size: 0.75rem;
+      letter-spacing: -0.15px;
+    }
   }
   &__close-btn {
     display: inline-block;

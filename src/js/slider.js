@@ -12,7 +12,7 @@ let initSliders = function () {
       .content.querySelector('.brands__item')
     let brandItemTemplate = document.querySelector('#brand-template').content
     let brandItem = brandItemTemplate.querySelector('.brands__item')
-    let showMoreBtn = document.querySelector('.show-more-btn')
+    let showMoreBtn = brandsSlider.querySelector('.show-more-btn')
     let showMoreBtnText = showMoreBtn.textContent
 
     let setSliderItems = function (numOfElems) {

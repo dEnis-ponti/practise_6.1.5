@@ -12,6 +12,9 @@
     @media (min-width: 0px) {
       width: fit-content;
     }
+    @media (min-width: 320px) {
+      width: 94.5vw;
+    }
     @media (min-width: 1426px) {
       position: absolute;
       width: 1070px;
