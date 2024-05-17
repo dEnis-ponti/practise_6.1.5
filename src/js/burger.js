@@ -21,9 +21,7 @@ let initBurger = function () {
     let burgerMenuFooter = document.querySelector('.burger-menu__footer')
     let adjustValue = `${pageContentHeight - asideHeight}` + 'px'
 
-    console.dir(burgerMenuFooter)
     burgerMenuFooter.style.height = adjustValue
-    console.log(window)
   }
   adjustAside()
 }

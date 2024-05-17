@@ -110,6 +110,11 @@
 .show-more-btn {
   display: inline-block;
   padding: 16px 42px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 24px;
+  color: #1b1c21;
+  letter-spacing: -0.2px;
   text-align: left;
   width: fit-content;
   position: relative;
@@ -136,7 +141,7 @@
 }
 
 .image {
-  @media (min-width: 320px) {
+  @media (min-width: 321px) {
     max-width: 100%;
   }
 }

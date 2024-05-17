@@ -10,13 +10,31 @@
       max-width: 100vw;
     }
   }
-
+  &__brands {
+    &::before {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100vw;
+      background-color: #d9fff5;
+    }
+  }
   &__services {
     @media (min-width: 0px) {
       margin-top: 40px;
     }
+    @media (min-width: 321px) {
+      margin-top: 32px;
+    }
     @media (min-width: 1426px) {
       margin: 0;
+    }
+    &::before {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100vw;
+      background-color: #d9fff5;
     }
   }
   &__prices {
@@ -83,7 +101,7 @@
     @media (min-width: 0px) {
       margin: 0;
     }
-    @media (min-width: 320px) {
+    @media (min-width: 321px) {
       font-size: 0.875rem;
       line-height: 20px;
       letter-spacing: 0.2px;
@@ -105,6 +123,9 @@
   &__show-more-btn {
     @media (min-width: 0px) {
       margin-left: 8px;
+    }
+    @media (min-width: 321px) {
+      margin-left: 14px;
     }
   }
 }
@@ -164,7 +185,7 @@
   @media (min-width: 0) {
     aspect-ratio: 320 / 176;
   }
-  @media (min-width: 320px) {
+  @media (min-width: 321px) {
     aspect-ratio: 365 / 208;
   }
   @media (min-width: 768px) {
@@ -181,14 +202,14 @@
   &__col {
     flex-basis: 50%;
     &--paragraph {
-      @media (min-width: 320px) {
+      @media (min-width: 321px) {
         min-width: 50%;
       }
     }
   }
   &__col-image {
     padding: 0 24px 24px 0;
-    @media (min-width: 320px) {
+    @media (min-width: 321px) {
       height: 208px;
     }
     @media (min-width: 1120px) {
