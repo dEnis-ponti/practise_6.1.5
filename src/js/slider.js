@@ -1,3 +1,5 @@
+import Swiper from 'swiper/swiper-bundle'
+
 let initSliders = function () {
   let initBrandsSliders = function () {
     let brandsSlider = document.querySelector('.brands__slider')
