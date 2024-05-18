@@ -208,9 +208,8 @@
     }
   }
   &__col-image {
-    padding: 0 24px 24px 0;
+    padding: 0 24px 16px 0;
     @media (min-width: 321px) {
-      height: 208px;
     }
     @media (min-width: 1120px) {
       transform: translateX(-10px);

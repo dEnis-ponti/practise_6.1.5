@@ -64,12 +64,13 @@ let initSliders = function () {
       if (screenWidth < 768) {
         console.log('swiper is initialized')
         const swiper = new Swiper('.brandsSwiper', {
-          slidesPerView: 1.25,
+          slidesPerView: 1.5,
           spaceBetween: 16,
           centerInsufficientSlides: true,
           // Optional parameters
           direction: 'horizontal',
           loop: false,
+          createElements: true,
 
           // If we need pagination
           pagination: {
