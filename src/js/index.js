@@ -1,6 +1,6 @@
 import 'normalize.css'
 import '../scss/style.scss'
-import 'swiper/swiper-bundle.min.css'
+// import 'swiper/swiper-bundle.min.css'
 
 import initSliders from './slider.js'
 import initModals from './modal.js'

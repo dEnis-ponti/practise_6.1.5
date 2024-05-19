@@ -64,8 +64,9 @@ let initSliders = function () {
       if (screenWidth < 768) {
         console.log('swiper is initialized')
         const swiper = new Swiper('.brandsSwiper', {
-          slidesPerView: 1.5,
           spaceBetween: 16,
+          slidesPerView: 1.5,
+          // centeredSlides: true,
           centerInsufficientSlides: true,
           // Optional parameters
           direction: 'horizontal',
@@ -82,6 +83,7 @@ let initSliders = function () {
         })
       }
     }
+    // brandsSwiper.on('slideChangeTransitionStart', function () {})
     initializeSwiper()
     let validateSlider = function () {
       let screenWidth = window.innerWidth
