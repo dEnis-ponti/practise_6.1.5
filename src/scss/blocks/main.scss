@@ -19,7 +19,7 @@
       background-color: #d9fff5;
     }
     @media (min-width: 480px) {
-      margin-top: 15px;
+      margin-top: 12px;
     }
   }
   &__services {
@@ -30,7 +30,7 @@
       margin-top: 32px;
     }
     @media (min-width: 480px) {
-      margin-top: 0;
+      margin-top: 14px;
     }
     @media (min-width: 1426px) {
       margin: 0;
@@ -46,6 +46,9 @@
   &__prices {
     @media (min-width: 0px) {
       margin-top: 44px;
+    }
+    @media (min-width: 480px) {
+      margin-top: 32px;
     }
   }
 
@@ -131,7 +134,7 @@
       margin-left: 8px;
     }
     @media (min-width: 321px) {
-      margin-left: 14px;
+      margin-left: 8px;
     }
   }
 }

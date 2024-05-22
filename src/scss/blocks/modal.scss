@@ -1,7 +1,6 @@
 .modal {
   &__dialog {
     position: absolute;
-    right: 0;
     display: flex;
     flex-direction: column;
     z-index: 1000;
@@ -11,6 +10,9 @@
     @media (min-width: 0) {
       right: initial;
       max-width: 100vw;
+    }
+    @media (min-width: 321px) {
+      right: -1px;
     }
     &--space {
       padding: 40px 32px;

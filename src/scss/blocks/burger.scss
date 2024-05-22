@@ -15,6 +15,10 @@
       width: 100vw;
       height: 100vh;
     }
+    @media (min-width: 767px) {
+      left: 0;
+      width: 320px;
+    }
     @media (min-width: 1426px) {
       display: none;
       position: relative;
@@ -23,6 +27,12 @@
   }
   &--hide {
     display: none;
+  }
+  &__body {
+    flex-grow: 1;
+    @media (min-width: 768px) {
+      margin-top: 26px;
+    }
   }
   &__close-btn {
     @media (min-width: 1426px) {
@@ -44,6 +54,10 @@
     @media (min-width: 0) {
       padding: 0 16px;
     }
+    @media (min-width: 767px) {
+      gap: 32.3px;
+      padding: 0 23px;
+    }
   }
 }
 
@@ -58,6 +72,9 @@
   @media (min-width: 0) {
     padding: 18px 10px;
   }
+  @media (min-width: 767px) {
+    padding: 18px 17px;
+  }
 }
 
 .header__left-col--burger-menu {
@@ -68,10 +85,6 @@
   display: none;
 }
 
-.burger-menu__body {
-  flex-grow: 1;
-}
-
 .burger-menu__footer {
   padding: 0 24px 0;
   display: flex;
@@ -80,6 +93,10 @@
   flex-grow: 6;
   @media (min-width: 0) {
     padding: 24px 16px 0;
+  }
+  @media (min-width: 767px) {
+    justify-content: end;
+    padding: 24px 24px 53px;
   }
 }
 
@@ -95,6 +112,7 @@
     padding: 0;
     transform: translateY(-10px);
   }
+  transform: translateY(21px);
 }
 
 .link--burger-menu-tel {

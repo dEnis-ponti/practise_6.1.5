@@ -5,11 +5,26 @@
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0;
+    &--developer {
+      @media (min-width: 767px) {
+        text-align: left;
+        text-wrap: nowrap;
+      }
+    }
+    &--oferta {
+      @media (min-width: 767px) {
+        text-align: right;
+      }
+    }
   }
 }
 
 .privacy-policy {
   margin: 16px 0;
+  @media (min-width: 767px) {
+    margin: 0 37px;
+    text-wrap: nowrap;
+  }
 }
 
 .year {

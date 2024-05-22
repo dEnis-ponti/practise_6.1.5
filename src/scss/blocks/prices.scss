@@ -1,10 +1,29 @@
 .prices {
   &__header {
     padding: 0 16px;
+    @media (min-width: 767px) {
+      flex-wrap: wrap;
+      padding: 0 24px;
+    }
+  }
+  &__slider {
+    &::before {
+      @media (min-width: 767px) {
+        display: none;
+      }
+    }
+    @media (min-width: 767px) {
+      margin-top: 20px;
+    }
   }
   &__list {
     display: flex;
     padding: 0 8px;
+    @media (min-width: 767px) {
+      flex-wrap: wrap;
+      padding: 0 24px;
+      max-width: calc(100vw - 48px);
+    }
   }
   &__item {
     @media (min-width: 0px) {
@@ -15,17 +34,33 @@
       padding: 16px;
       border-radius: 6px;
       background-color: #fff;
+      max-width: 225px;
       &--head {
         display: none;
       }
     }
-    @media (min-width: 768px) {
+    @media (min-width: 767px) {
       display: grid;
-      grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+      grid-template-rows: 1fr;
+      grid-template-columns: [name] 3.35fr [cost] 0.87fr [schedule] 0.99fr [order] 1fr;
       align-items: center;
+      width: 100%;
+      max-width: calc(100% - 32px);
+      height: 64px;
+      padding: 0 16px;
+      &:not(:first-child)::after {
+        content: '';
+        height: 1px;
+        width: calc(100% - 32px);
+        margin: 0 16px;
+        background-color: $color-border;
+        display: inline-block;
+        position: absolute;
+        bottom: 100%;
+      }
       &--head {
         display: grid;
-        grid-template-columns: [name] 2fr [cost] 1fr [schedule] 1fr [order] 1fr;
+        grid-template-columns: [name] 3.35fr [cost] 0.97fr [schedule] 0.99fr [order] 1fr;
         font-size: 1rem;
         line-height: 16px;
         letter-spacing: 0;
@@ -38,11 +73,18 @@
     &::before {
       content: 'Ремонтные услуги';
     }
+    @media (min-width: 767px) {
+      grid-area: name;
+      margin-right: 24px;
+    }
   }
   &__service-cost {
     grid-area: cost / 1;
     &::before {
       content: 'Цена';
+    }
+    @media (min-width: 767px) {
+      grid-area: cost;
     }
   }
   &__service-schedule {
@@ -51,6 +93,9 @@
     &::before {
       content: 'Срок';
     }
+    @media (min-width: 767px) {
+      grid-area: schedule;
+    }
   }
   &__order-btn {
     grid-area: 3;
@@ -58,6 +103,15 @@
     letter-spacing: -0.15px;
     display: flex;
     margin: 20px 0 0 28px;
+    &::after {
+      @media (min-width: 0) {
+        width: 21px;
+      }
+    }
+    @media (min-width: 767px) {
+      grid-area: order;
+      margin: 0 0 15px;
+    }
   }
   &__service-name,
   &__service-cost,
@@ -73,6 +127,9 @@
       font-weight: 500;
       line-height: 16px;
       letter-spacing: 0;
+      @media (min-width: 767px) {
+        display: none;
+      }
     }
   }
   &__service-cost,
@@ -92,12 +149,19 @@
     font-size: 0.875rem;
     line-height: 20px;
     letter-spacing: 0.2px;
+    @media (min-width: 767px) {
+      padding: 0 24px;
+      max-width: 55%;
+    }
   }
   &__get-offer {
     display: inline-block;
     padding: 0 16px;
     font-weight: 500;
     color: $text-color;
+    @media (min-width: 767px) {
+      padding: 0 24px;
+    }
     &::after {
       content: url('../img/main/item-more-ico.svg');
       display: inline-block;
