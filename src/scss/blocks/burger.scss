@@ -19,10 +19,10 @@
       left: 0;
       width: 320px;
     }
-    @media (min-width: 1426px) {
-      display: none;
+    @media (min-width: 1425px) {
       position: relative;
-      width: 350px;
+      width: 306px;
+      height: initial;
     }
   }
   &--hide {
@@ -33,6 +33,9 @@
     @media (min-width: 768px) {
       margin-top: 26px;
     }
+    @media (min-width: 1425px) {
+      margin-top: 6px;
+    }
   }
   &__close-btn {
     @media (min-width: 1426px) {
@@ -42,8 +45,14 @@
   &__logo {
     visibility: visible;
     margin: 2px 0 0 0;
+    &:before {
+      display: none;
+    }
     @media (min-width: 0) {
       margin: 2px 0 0 10px;
+    }
+    @media (min-width: 1425px) {
+      margin: 5px 0 0 0;
     }
   }
   &__nav-list {
@@ -57,6 +66,43 @@
     @media (min-width: 767px) {
       gap: 32.3px;
       padding: 0 23px;
+    }
+    @media (min-width: 1425px) {
+      gap: 25.3px;
+    }
+    &--languages {
+      flex-direction: row;
+      padding: 30px 0 32px;
+      gap: 7px;
+      transform: translateY(21px);
+      @media (min-width: 0) {
+        padding: 0;
+        transform: translateY(-10px);
+      }
+      @media (min-width: 1425px) {
+        padding: 0;
+        transform: translateY(26px);
+      }
+    }
+  }
+  &__footer {
+    padding: 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 6;
+    @media (min-width: 0) {
+      padding: 24px 16px 0;
+    }
+    @media (min-width: 767px) {
+      justify-content: end;
+      padding: 24px 24px 53px;
+    }
+    @media (min-width: 1425px) {
+      display: flex;
+      justify-content: flex-start;
+      flex-grow: 4;
+      padding: 26px 20px 53px;
     }
   }
 }
@@ -75,44 +121,17 @@
   @media (min-width: 767px) {
     padding: 18px 17px;
   }
+  @media (min-width: 1425px) {
+    padding: 26px 22px;
+  }
 }
 
 .header__left-col--burger-menu {
   visibility: visible;
 }
 
-.burger-menu__logo::before {
-  display: none;
-}
-
-.burger-menu__footer {
-  padding: 0 24px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex-grow: 6;
-  @media (min-width: 0) {
-    padding: 24px 16px 0;
-  }
-  @media (min-width: 767px) {
-    justify-content: end;
-    padding: 24px 24px 53px;
-  }
-}
-
 .links-list--burger-menu {
   gap: 16px;
-}
-
-.burger-menu__nav-list--row-flex {
-  flex-direction: row;
-  padding: 30px 0 32px;
-  gap: 7px;
-  @media (min-width: 0) {
-    padding: 0;
-    transform: translateY(-10px);
-  }
-  transform: translateY(21px);
 }
 
 .link--burger-menu-tel {

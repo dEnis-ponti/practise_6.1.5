@@ -17,16 +17,24 @@ let initBurger = function () {
     pageContent.classList.remove('page__content--burger-show')
   })
 
-  function adjustAside() {
-    let pageContentHeight =
-      document.querySelector('.page__content').clientHeight
-    let asideHeight = document.querySelector('.burger-menu').clientHeight
-    let burgerMenuFooter = document.querySelector('.burger-menu__footer')
-    let adjustValue = `${pageContentHeight - asideHeight}` + 'px'
+  // function adjustAside() {
+  //   let pageContentHeight =
+  //     document.querySelector('.page__content').offsetHeight
+  //   let asideHeight = document.querySelector('.burger-menu').offsetHeight
+  //   let burgerMenuFooter = document.querySelector('.burger-menu__footer')
+  //   let adjustValue = `${pageContentHeight - asideHeight}` + 'px'
+  //   burgerMenuFooter.style.height = adjustValue
+  // }
 
-    burgerMenuFooter.style.height = adjustValue
+  let burgerDesktopDisplay = function () {
+    let windowWidth = window.innerWidth
+    if (windowWidth > 1425) {
+      burgerMenu.classList.toggle('burger-menu--hide')
+    } else {
+      console.log('false')
+    }
   }
-  adjustAside()
+  burgerDesktopDisplay()
 }
 
 export default initBurger
