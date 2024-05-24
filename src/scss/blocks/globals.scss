@@ -141,7 +141,7 @@
 }
 
 .image {
-  @media (min-width: 321px) {
+  @media (min-width: $screen-sm) {
     max-width: 100%;
   }
 }

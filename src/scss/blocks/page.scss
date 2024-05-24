@@ -5,7 +5,7 @@
     justify-content: center;
     background-color: #f8f8f8;
     height: 100%;
-    @media (min-width: 1425px) {
+    @media (min-width: $screen-xl) {
       overflow-x: hidden;
     }
   }
@@ -14,7 +14,7 @@
   }
   &__content {
     &--burger-show {
-      @media (min-width: 321px) {
+      @media (min-width: $screen-sm) {
         max-width: 100vw;
         &::after {
           content: '';
@@ -27,13 +27,13 @@
         }
       }
     }
-    @media (min-width: 0px) {
+    @media (min-width: $screen-xs) {
       max-width: 320px;
     }
-    @media (min-width: 321px) {
+    @media (min-width: $screen-sm) {
       max-width: 100vw;
     }
-    @media (min-width: 1426px) {
+    @media (min-width: $screen-xl) {
       max-width: 1120px;
     }
   }
@@ -51,10 +51,14 @@
     margin-top: 45px;
     margin-bottom: 19px;
     padding: 0 16px;
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       flex-direction: row;
       margin-top: 55px;
       padding: 0 24px;
+    }
+    @media (min-width: $screen-xl) {
+      justify-content: space-between;
+      padding: 7px 30px;
     }
   }
 }

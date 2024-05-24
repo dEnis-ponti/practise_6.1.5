@@ -1,32 +1,43 @@
 .prices {
   &__header {
     padding: 0 16px;
-    @media (min-width: 767px) {
+    background: linear-gradient(to right, #f8f8f8 0%, #ffffff 100%);
+    @media (min-width: $screen-md) {
       flex-wrap: wrap;
       padding: 0 24px;
+    }
+    @media (min-width: $screen-xl) {
+      padding: 4px 31px;
     }
   }
   &__slider {
     &::before {
-      @media (min-width: 767px) {
+      @media (min-width: $screen-md) {
         display: none;
       }
     }
-    @media (min-width: 767px) {
-      margin-top: 20px;
+    @media (min-width: $screen-md) {
+      margin-top: 0px;
+    }
+    @media (min-width: $screen-xl) {
+      margin-bottom: 5px;
     }
   }
   &__list {
     display: flex;
     padding: 0 8px;
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       flex-wrap: wrap;
       padding: 0 24px;
       max-width: calc(100vw - 48px);
     }
+    @media (min-width: $screen-xl) {
+      max-width: 1095px;
+      padding: 0 35px;
+    }
   }
   &__item {
-    @media (min-width: 0px) {
+    @media (min-width: $screen-xs) {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: [name] 2fr [cost] 0.25fr [scheduleAndOrder] 1.25fr;
@@ -39,7 +50,7 @@
         display: none;
       }
     }
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: [name] 3.35fr [cost] 0.87fr [schedule] 0.99fr [order] 1fr;
@@ -65,7 +76,13 @@
         line-height: 16px;
         letter-spacing: 0;
         font-weight: 500;
+        @media (min-width: $screen-xl) {
+          grid-template-columns: [name] 3.35fr [cost] 1.5fr [schedule] 1.5fr [order] 1fr;
+        }
       }
+    }
+    @media (min-width: $screen-xl) {
+      grid-template-columns: [name] 3.35fr [cost] 1.5fr [schedule] 1.3fr [order] 1.2fr;
     }
   }
   &__service-name {
@@ -73,7 +90,7 @@
     &::before {
       content: 'Ремонтные услуги';
     }
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       grid-area: name;
       margin-right: 24px;
     }
@@ -83,7 +100,7 @@
     &::before {
       content: 'Цена';
     }
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       grid-area: cost;
     }
   }
@@ -93,7 +110,7 @@
     &::before {
       content: 'Срок';
     }
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       grid-area: schedule;
     }
   }
@@ -104,13 +121,16 @@
     display: flex;
     margin: 20px 0 0 28px;
     &::after {
-      @media (min-width: 0) {
+      @media (min-width: $screen-xs) {
         width: 21px;
       }
     }
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       grid-area: order;
       margin: 0 0 15px;
+    }
+    @media (min-width: $screen-xl) {
+      margin: 15px 0px 15px 0;
     }
   }
   &__service-name,
@@ -127,14 +147,14 @@
       font-weight: 500;
       line-height: 16px;
       letter-spacing: 0;
-      @media (min-width: 767px) {
+      @media (min-width: $screen-md) {
         display: none;
       }
     }
   }
   &__service-cost,
   &__service-schedule {
-    @media (min-width: 1426px) {
+    @media (min-width: $screen-xl) {
       margin: 23px 0;
       line-height: 18px;
       letter-spacing: 0.2px;
@@ -144,14 +164,26 @@
       }
     }
   }
+  &__comment {
+    @media (min-width: $screen-xs) {
+      padding: 0;
+      margin-top: 19px;
+    }
+    @media (min-width: $screen-xl) {
+      padding-left: 8px;
+    }
+  }
   &__note {
     padding: 0 16px;
     font-size: 0.875rem;
     line-height: 20px;
     letter-spacing: 0.2px;
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       padding: 0 24px;
       max-width: 55%;
+    }
+    @media (min-width: $screen-xl) {
+      max-width: 38%;
     }
   }
   &__get-offer {
@@ -159,7 +191,7 @@
     padding: 0 16px;
     font-weight: 500;
     color: $text-color;
-    @media (min-width: 767px) {
+    @media (min-width: $screen-md) {
       padding: 0 24px;
     }
     &::after {
