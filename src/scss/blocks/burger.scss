@@ -77,6 +77,9 @@
       @media (min-width: $screen-xs) {
         padding: 0;
       }
+      @media (min-width: $screen-md) {
+        transform: translateY(30px);
+      }
       @media (min-width: $screen-xl) {
         padding: 0;
         transform: translateY(18px);
@@ -93,7 +96,7 @@
     }
     @media (min-width: $screen-md) {
       justify-content: end;
-      padding: 24px 24px 53px;
+      padding: 24px 24px 62px;
     }
     @media (min-width: $screen-xl) {
       display: flex;

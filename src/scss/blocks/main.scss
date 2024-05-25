@@ -139,6 +139,9 @@
     @media (min-width: $screen-xs) {
       margin-left: 8px;
     }
+    @media (min-width: $screen-md) {
+      margin-top: -6px;
+    }
     @media (min-width: $screen-sm) {
       margin-left: 8px;
     }
