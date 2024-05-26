@@ -75,6 +75,9 @@
     @media (min-width: $screen-sm) {
       row-gap: 14px;
     }
+    @media (min-width: $screen-md) {
+      column-gap: 24px;
+    }
   }
 
   &__link {
@@ -120,16 +123,6 @@
 
 .show-more-btn--active::before {
   transform: translateX(-16px) rotate(180deg);
-}
-
-@media (max-width: 1120px) {
-  .brands__slider {
-  }
-  .brands__item {
-  }
-  .brands__list {
-    column-gap: 24px;
-  }
 }
 
 /* Swiper */
