@@ -1097,6 +1097,10 @@ template {
   @media (min-width: 321px) {
     .brands__list {
       row-gap: 14px; } }
+  @media (min-width: 767px) {
+    .brands__list {
+      -moz-column-gap: 24px;
+           column-gap: 24px; } }
 
 .brands__link {
   display: flex;
@@ -1136,11 +1140,6 @@ template {
 
 .show-more-btn--active::before {
   transform: translateX(-16px) rotate(180deg); }
-
-@media (max-width: 1120px) {
-  .brands__list {
-    -moz-column-gap: 24px;
-         column-gap: 24px; } }
 
 /* Swiper */
 .swiper {
