@@ -31,6 +31,9 @@
       display: inline-block;
       left: 0;
       position: absolute;
+      &:hover {
+        transform: initial;
+      }
     }
   }
 }
@@ -57,6 +60,8 @@
   letter-spacing: -0.2px;
   color: #7e7e82;
   text-decoration: none;
+  transition: 0.35s;
+  cursor: pointer;
   &--burger-menu {
     color: #1b1c21;
     font-size: 1rem;
@@ -73,37 +78,39 @@
   transform: scale(0.95);
   filter: contrast(1.25);
 }
-.link:not(:hover),
-.ico:not(:hover) {
-  transition: 0.35s;
-}
 
 .button {
   border: none;
   background-color: initial;
-}
-
-.button--rounded {
-  display: inline-block;
-  height: fit-content;
-  width: fit-content;
-  padding: 4px 12px;
-  font-size: 0.8571rem;
-  text-transform: uppercase;
-  color: #fff;
-  line-height: 24px;
-  letter-spacing: 0.0107rem;
-  font-weight: bold;
-  background-color: $color-main;
-
-  border-radius: 16px;
-  &::after {
-    content: url(../img/main/button-rounded-ico.svg);
+  transition: 0.35s;
+  cursor: pointer;
+  &:hover {
+    transition: 0.35s;
+    transform: scale(0.95);
+    filter: contrast(1.95);
+  }
+  &--rounded {
     display: inline-block;
-    position: static;
-    width: 24px;
-    height: 24px;
-    margin-left: 8px;
+    height: fit-content;
+    width: fit-content;
+    padding: 4px 12px;
+    font-size: 0.8571rem;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 24px;
+    letter-spacing: 0.0107rem;
+    font-weight: bold;
+    background-color: $color-main;
+
+    border-radius: 16px;
+    &::after {
+      content: url(../img/main/button-rounded-ico.svg);
+      display: inline-block;
+      position: static;
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+    }
   }
 }
 
@@ -130,7 +137,30 @@
 }
 
 .nav-list {
+  &__item {
+    transition: 0.35s;
+    &:hover {
+      transition: 0.35s;
+      transform: scale(0.95);
+      filter: contrast(1.95);
+    }
+    &:hover > a:before {
+      transition: 0.35s;
+    }
+    &:not(:hover) > a:before {
+      transition: 0.35s;
+    }
+  }
   &__link {
+    transition: 0.35s;
+    cursor: pointer;
+    &:hover {
+      transition: 0.35s;
+      &::before {
+        transition: 0.35s;
+        opacity: 0;
+      }
+    }
     &--active {
       color: $text-color--muted;
       &::before {
