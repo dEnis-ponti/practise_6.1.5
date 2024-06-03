@@ -155,7 +155,7 @@
     overflow-x: scroll;
     scrollbar-color: transparent transparent;
   }
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     overflow-x: auto;
   }
 }

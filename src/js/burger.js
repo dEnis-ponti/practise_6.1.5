@@ -30,8 +30,6 @@ let initBurger = function () {
     let windowWidth = window.innerWidth
     if (windowWidth > 1425) {
       burgerMenu.classList.toggle('burger-menu--hide')
-    } else {
-      console.log('false')
     }
   }
   burgerDesktopDisplay()

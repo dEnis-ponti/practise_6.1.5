@@ -10,7 +10,6 @@ let initModals = function () {
     let modalCloseBtn = modalBlock.querySelector('.modal__close-btn')
     triggerBtn.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
-        console.log(e)
         e.preventDefault()
         modalBlock.classList.remove('modal--hide')
         page.classList.add('page--modal-on')

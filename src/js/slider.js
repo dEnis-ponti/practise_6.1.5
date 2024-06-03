@@ -62,7 +62,6 @@ let initSliders = function () {
     let initializeSwiper = function () {
       let screenWidth = window.innerWidth
       if (screenWidth < 768) {
-        console.log('swiper is initialized')
         const swiper = new Swiper('.brandsSwiper', {
           spaceBetween: 16,
           slidesPerView: 1.5,
@@ -112,7 +111,6 @@ let initSliders = function () {
         showMoreBtn.textContent = showMoreBtnText
         showMoreBtn.classList.remove('show-more-btn--active')
         let itemsToDisplay = brandsItems.length - 3
-        console.log(itemsToDisplay)
         for (let j = brandsItems.length; (j = itemsToDisplay); j--) {
           if (brandsItems[j] != undefined) {
             brandsItems[j].remove()
@@ -188,7 +186,6 @@ let initSliders = function () {
     let initializeSwiper = function () {
       let screenWidth = window.innerWidth
       if (screenWidth < 768) {
-        console.log('swiper is initialized')
         const swiper = new Swiper('.servicesSwiper', {
           slidesPerView: 1.25,
           spaceBetween: 16,
@@ -235,7 +232,6 @@ let initSliders = function () {
         showMoreBtn.textContent = showMoreBtnText
         showMoreBtn.classList.remove('show-more-btn--active')
         let itemsToDisplay = servicesItems.length - 4
-        console.log(itemsToDisplay)
         for (let j = servicesItems.length; (j = itemsToDisplay); j--) {
           if (servicesItems[j] != undefined) {
             servicesItems[j].remove()
@@ -251,7 +247,6 @@ let initSliders = function () {
     let initializeSwiper = function () {
       let screenWidth = window.innerWidth
       if (screenWidth < 768) {
-        console.log('swiper is initialized')
         const swiper = new Swiper('.pricesSwiper', {
           slidesPerView: 1.1,
           spaceBetween: 16,

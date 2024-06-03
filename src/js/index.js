@@ -7,8 +7,6 @@ import initModals from './modal.js'
 import initBurger from './burger.js'
 import initReadMoreBtn from './read-more.js'
 
-console.log('Works!')
-
 window.addEventListener('DOMContentLoaded', function () {
   initBurger()
   initSliders()
