@@ -5,101 +5,62 @@ let initSliders = function () {
     let brandsSlider = document.querySelector('.brands__slider')
     let brandsSliderMobile = document.querySelector('.brands__slider-mobile')
     let brandsList = document.querySelector('.brands__list')
-    let brandsListMobile = brandsSliderMobile.querySelector('.brands__list')
 
     let brandsItems = brandsList.children
-    let brandsItemsMobile = brandsListMobile.children
-    let brandItemTemplateMobile = document
-      .querySelector('#swiper-template-brands')
-      .content.querySelector('.brands__item')
-    let brandItemTemplate = document.querySelector('#brand-template').content
-    let brandItem = brandItemTemplate.querySelector('.brands__item')
+
     let showMoreBtn = brandsSlider.querySelector('.show-more-btn')
     let showMoreBtnText = showMoreBtn.textContent
 
-    let setSliderItems = function (numOfElems) {
-      let screenWidth = window.innerWidth
-      if (screenWidth >= 768) {
-        for (let i = brandsItems.length; i <= numOfElems; i++) {
-          let brandItemDuplicate = brandItem.cloneNode(true)
-          brandsList.appendChild(brandItemDuplicate)
-          let brandLogo = brandsItems[i].querySelector('.brands__logo')
-          let brandLogoSrc = brandLogo.src
-          let validBrandLogoSrc = brandLogoSrc.replace(
-            'brand-1.png',
-            'brand-' + (i + 1) + '.png'
-          )
-          brandLogo.src = validBrandLogoSrc
-        }
-      } else if (screenWidth < 768) {
-        for (let i = brandsItemsMobile.length; i <= numOfElems; i++) {
-          let brandItemDuplicate = brandItemTemplateMobile.cloneNode(true)
-          brandsListMobile.appendChild(brandItemDuplicate)
-          let brandLogo = brandsItemsMobile[i].querySelector('.brands__logo')
-          let brandLogoSrc = brandLogo.src
-          let validBrandLogoSrc = brandLogoSrc.replace(
-            'brand-1.png',
-            'brand-' + (i + 1) + '.png'
-          )
-          brandLogo.src = validBrandLogoSrc
-        }
-      }
-    }
-
-    let adjustSliderItems = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth >= 1120) {
-        setSliderItems(7)
-      } else if (screenWidth >= 768) {
-        setSliderItems(5)
-      } else if (screenWidth < 768) {
-        setSliderItems(8)
-      }
-    }
-    adjustSliderItems()
-    window.addEventListener('resize', adjustSliderItems)
-
     let initializeSwiper = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth < 768) {
-        const swiper = new Swiper('.brandsSwiper', {
-          spaceBetween: 16,
-          slidesPerView: 1.5,
-          // centeredSlides: true,
-          centerInsufficientSlides: true,
-          // Optional parameters
-          direction: 'horizontal',
-          loop: false,
-          createElements: true,
-
-          // If we need pagination
-          pagination: {
-            el: '.brandsSwiper-pagination',
-            clickable: true
+      const swiper = new Swiper('.brandsSwiper', {
+        // centeredSlides: true,
+        centerInsufficientSlides: true,
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        createElements: true,
+        breakpoints: {
+          0: {
+            spaceBetween: 16,
+            slidesPerView: 1.5
           },
-          slideToClickedSlide: true,
-          draggable: true
-        })
+          321: {
+            spaceBetween: 16,
+            slidesPerView: 1.5
+          },
+          768: {
+            spaceBetween: 16,
+            slidesPerView: 1.5
+          }
+        },
+
+        // If we need pagination
+        pagination: {
+          el: '.brandsSwiper-pagination',
+          clickable: true
+        },
+        slideToClickedSlide: true,
+        draggable: true
+      })
+
+      let init = false
+
+      function swiperCheck() {
+        if (window.innerWidth < 768) {
+          init = true
+          swiper.enable()
+        } else if (window.innerWidth > 768) {
+          if (swiper !== undefined) {
+            swiper.disable()
+          } else {
+            console.log('swiper almost deleted')
+          }
+        }
       }
+      swiperCheck()
+      window.addEventListener('resize', swiperCheck)
     }
-    // brandsSwiper.on('slideChangeTransitionStart', function () {})
     initializeSwiper()
-    let validateSlider = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth < 768) {
-        brandsSlider.classList.add('brands__slider--hide')
-        brandsSlider.classList.remove('brands__slider--show')
-        brandsSliderMobile.classList.remove('brands__slider-mobile--hide')
-        brandsSliderMobile.classList.add('brands__slider-mobile--show')
-      } else if (screenWidth >= 768) {
-        brandsSlider.classList.add('brands__slider--show')
-        brandsSlider.classList.remove('brands__slider--hide')
-        brandsSliderMobile.classList.add('brands__slider-mobile--hide')
-        brandsSliderMobile.classList.remove('brands__slider-mobile--show')
-      }
-    }
-    validateSlider()
-    window.addEventListener('resize', validateSlider)
 
     showMoreBtn.addEventListener('click', function () {
       if (!showMoreBtn.classList.contains('show-more-btn--active')) {
@@ -142,47 +103,6 @@ let initSliders = function () {
     let showMoreBtn = servicesSlider.querySelector('.show-more-btn')
     let showMoreBtnText = showMoreBtn.textContent
 
-    let setSliderItems = function (numOfElems) {
-      let screenWidth = window.innerWidth
-      if (screenWidth >= 768) {
-        for (let i = servicesItems.length; i <= numOfElems; i++) {
-          let serviceItemDuplicate = serviceItem.cloneNode(true)
-          servicesList.appendChild(serviceItemDuplicate)
-          let serviceLink = servicesItems[i].querySelector('.services__link')
-          let validServiceText = serviceLink.textContent.replace(
-            'Ремонт устройства #1',
-            'Ремонт устройства # ' + (i + 1)
-          )
-          serviceLink.textContent = validServiceText
-        }
-      } else if (screenWidth < 768) {
-        for (let i = servicesItemsMobile.length; i <= numOfElems; i++) {
-          let serviceItemDuplicate = serviceItemTemplateMobile.cloneNode(true)
-          servicesListMobile.appendChild(serviceItemDuplicate)
-          let serviceLink =
-            servicesItemsMobile[i].querySelector('.services__link')
-          let validServiceText = serviceLink.textContent.replace(
-            'Ремонт устройства #1',
-            'Ремонт устройства # ' + (i + 1)
-          )
-          serviceLink.textContent = validServiceText
-        }
-      }
-    }
-
-    let adjustSliderItems = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth >= 1120) {
-        setSliderItems(3)
-      } else if (screenWidth >= 768) {
-        setSliderItems(2)
-      } else if (screenWidth < 768) {
-        setSliderItems(8)
-      }
-    }
-    adjustSliderItems()
-    window.addEventListener('resize', adjustSliderItems)
-
     let initializeSwiper = function () {
       let screenWidth = window.innerWidth
       if (screenWidth < 768) {
@@ -205,22 +125,6 @@ let initSliders = function () {
       }
     }
     initializeSwiper()
-    let validateSlider = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth < 768) {
-        servicesSlider.classList.add('services__slider--hide')
-        servicesSlider.classList.remove('services__slider--show')
-        servicesSliderMobile.classList.remove('services__slider-mobile--hide')
-        servicesSliderMobile.classList.add('services__slider-mobile--show')
-      } else if (screenWidth >= 768) {
-        servicesSlider.classList.add('services__slider--show')
-        servicesSlider.classList.remove('services__slider--hide')
-        servicesSliderMobile.classList.add('services__slider-mobile--hide')
-        servicesSliderMobile.classList.remove('services__slider-mobile--show')
-      }
-    }
-    validateSlider()
-    window.addEventListener('resize', validateSlider)
 
     showMoreBtn.addEventListener('click', function () {
       if (!showMoreBtn.classList.contains('show-more-btn--active')) {
@@ -244,10 +148,11 @@ let initSliders = function () {
   }
 
   let initPricecSliders = function () {
-    let initializeSwiper = function () {
-      let screenWidth = window.innerWidth
-      if (screenWidth < 768) {
-        const swiper = new Swiper('.pricesSwiper', {
+    let priceSwiper = null
+    let mediaBreakpoint = 768
+    function initPriceSwiper() {
+      if (priceSwiper === null) {
+        priceSwiper = new Swiper('.pricesSwiper', {
           slidesPerView: 1.1,
           spaceBetween: 16,
           centerInsufficientSlides: false,
@@ -265,8 +170,20 @@ let initSliders = function () {
         })
       }
     }
-    initializeSwiper()
+    function destroyPriceSwiper() {
+      priceSwiper = null
+    }
+
+    window.addEventListener('resize', function () {
+      let windowWidth = window.innerWidth
+      if (windowWidth <= mediaBreakpoint) {
+        initPriceSwiper()
+      } else {
+        destroyPriceSwiper()
+      }
+    })
   }
+
   return initBrandsSliders(), initServicesSliders(), initPricecSliders()
   // ,
 }
