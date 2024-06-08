@@ -3,64 +3,76 @@ import Swiper from 'swiper/swiper-bundle'
 let initSliders = function () {
   let initBrandsSliders = function () {
     let brandsSlider = document.querySelector('.brands__slider')
-    let brandsSliderMobile = document.querySelector('.brands__slider-mobile')
     let brandsList = document.querySelector('.brands__list')
-
     let brandsItems = brandsList.children
 
     let showMoreBtn = brandsSlider.querySelector('.show-more-btn')
     let showMoreBtnText = showMoreBtn.textContent
 
-    let initializeSwiper = function () {
-      const swiper = new Swiper('.brandsSwiper', {
-        // centeredSlides: true,
-        centerInsufficientSlides: true,
-        // Optional parameters
-        direction: 'horizontal',
-        loop: false,
-        createElements: true,
-        breakpoints: {
-          0: {
-            spaceBetween: 16,
-            slidesPerView: 1.5
+    let brandSwiper = null
+    let mediaBreakpoint = 768
+
+    let initBrandsSwiper = function () {
+      if (brandSwiper === null) {
+        brandSwiper = new Swiper('.brandsSwiper', {
+          // centeredSlides: true,
+          centerInsufficientSlides: true,
+          // Optional parameters
+          direction: 'horizontal',
+          loop: false,
+          createElements: true,
+          breakpoints: {
+            0: {
+              spaceBetween: 16,
+              slidesPerView: 1.5
+            },
+            321: {
+              spaceBetween: 16,
+              slidesPerView: 1.5
+            },
+            768: {
+              spaceBetween: 16,
+              slidesPerView: 1.5
+            }
           },
-          321: {
-            spaceBetween: 16,
-            slidesPerView: 1.5
+
+          // If we need pagination
+          pagination: {
+            el: '.brandsSwiper-pagination',
+            clickable: true
           },
-          768: {
-            spaceBetween: 16,
-            slidesPerView: 1.5
-          }
-        },
-
-        // If we need pagination
-        pagination: {
-          el: '.brandsSwiper-pagination',
-          clickable: true
-        },
-        slideToClickedSlide: true,
-        draggable: true
-      })
-
-      let init = false
-
-      function swiperCheck() {
-        if (window.innerWidth < 768) {
-          init = true
-          swiper.enable()
-        } else if (window.innerWidth > 768) {
-          if (swiper !== undefined) {
-            swiper.disable()
-          } else {
-            console.log('swiper almost deleted')
-          }
-        }
+          slideToClickedSlide: true,
+          draggable: true
+        })
       }
-      swiperCheck()
-      window.addEventListener('resize', swiperCheck)
     }
-    initializeSwiper()
+    function destroyBrandsSwiper() {
+      brandSwiper.destroy()
+      brandSwiper = null
+    }
+
+    let windowWidth = window.innerWidth
+    let brandSwiperPagination = document.querySelector(
+      '.brandsSwiper-pagination'
+    )
+    if (windowWidth <= mediaBreakpoint) {
+      brandSwiperPagination.style.display = 'flex'
+      initBrandsSwiper()
+    }
+
+    window.addEventListener('resize', function () {
+      let windowWidth = window.innerWidth
+      let brandSwiperPagination = document.querySelector(
+        '.brandsSwiper-pagination'
+      )
+      if (windowWidth <= mediaBreakpoint) {
+        brandSwiperPagination.style.display = 'flex'
+        initBrandsSwiper()
+      } else if (brandSwiper !== null) {
+        brandSwiperPagination.style.display = 'none'
+        destroyBrandsSwiper()
+      }
+    })
 
     showMoreBtn.addEventListener('click', function () {
       if (!showMoreBtn.classList.contains('show-more-btn--active')) {
@@ -171,21 +183,35 @@ let initSliders = function () {
       }
     }
     function destroyPriceSwiper() {
+      priceSwiper.destroy()
       priceSwiper = null
+    }
+
+    let windowWidth = window.innerWidth
+    let priceSwiperPagination = document.querySelector(
+      '.pricesSwiper-pagination'
+    )
+    if (windowWidth <= mediaBreakpoint) {
+      priceSwiperPagination.style.display = 'flex'
+      initPriceSwiper()
     }
 
     window.addEventListener('resize', function () {
       let windowWidth = window.innerWidth
+      let priceSwiperPagination = document.querySelector(
+        '.pricesSwiper-pagination'
+      )
       if (windowWidth <= mediaBreakpoint) {
+        priceSwiperPagination.style.display = 'flex'
         initPriceSwiper()
-      } else {
+      } else if (priceSwiper !== null) {
+        priceSwiperPagination.style.display = 'none'
         destroyPriceSwiper()
       }
     })
   }
 
   return initBrandsSliders(), initServicesSliders(), initPricecSliders()
-  // ,
 }
 
 export default initSliders
