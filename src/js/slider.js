@@ -1,13 +1,66 @@
 import Swiper from 'swiper/swiper-bundle'
 
 let initSliders = function () {
+  function setSliderItems() {
+    let brandsSlider = document.querySelector('.brands__slider')
+    let brandsList = document.querySelector('.brands__list')
+    let brandsItems = brandsList.children
+    let showMoreBtn = brandsSlider.querySelector('.show-more-btn')
+    let showMoreBtnText = showMoreBtn.textContent
+
+    console.log(brandsItems)
+    if (window.innerWidth < 768) {
+      showMoreBtn.style.display = 'none'
+      let listLength = brandsItems.length
+      console.log(listLength)
+      for (let j = 11; j >= 9; j--) {
+        brandsItems[j].classList.add('brands__item--hide')
+        console.log(brandsItems[j].classList)
+      }
+    } else if (window.innerWidth >= 768 && window.innerWidth < 1426) {
+      showMoreBtn.style.display = 'inline-block'
+      for (let j = 11; j >= 6; j--) {
+        brandsItems[j].classList.add('brands__item--hide')
+      }
+    } else if (window.innerWidth >= 1426) {
+      showMoreBtn.style.display = 'inline-block'
+      for (let j = 11; j >= 8; j--) {
+        brandsItems[j].classList.add('brands__item--hide')
+      }
+    }
+
+    console.log(brandsItems)
+    showMoreBtn.addEventListener('click', function () {
+      if (!showMoreBtn.classList.contains('show-more-btn--active')) {
+        showMoreBtn.textContent = 'Скрыть'
+        showMoreBtn.classList.add('show-more-btn--active')
+        for (let i = 11; i >= 6; i--) {
+          if (brandsItems[i].contains('brands__item--hide')) {
+            brandsItems[i].classList.remove('brand__item--hide')
+          }
+        }
+      } else {
+        showMoreBtn.textContent = showMoreBtnText
+        showMoreBtn.classList.remove('show-more-btn--active')
+        if (window.innerWidth >= 768 && window.innerWidth < 1426) {
+          showMoreBtn.style.display = 'inline-block'
+          for (let j = 11; j >= 6; j--) {
+            brandsItems[j].classList.add('brands__item--hide')
+          }
+        } else if (window.innerWidth >= 1426) {
+          showMoreBtn.style.display = 'inline-block'
+          for (let j = 11; j >= 8; j--) {
+            brandsItems[j].classList.add('brands__item--hide')
+          }
+        }
+      }
+    })
+  }
+  setSliderItems()
   let initBrandsSliders = function () {
     let brandsSlider = document.querySelector('.brands__slider')
     let brandsList = document.querySelector('.brands__list')
     let brandsItems = brandsList.children
-
-    let showMoreBtn = brandsSlider.querySelector('.show-more-btn')
-    let showMoreBtnText = showMoreBtn.textContent
 
     let brandSwiper = null
     let mediaBreakpoint = 768
@@ -24,14 +77,14 @@ let initSliders = function () {
           breakpoints: {
             0: {
               spaceBetween: 16,
-              slidesPerView: 1.5
+              slidesPerView: 1.35
             },
             321: {
               spaceBetween: 16,
               slidesPerView: 1.5
             },
             768: {
-              spaceBetween: 16,
+              spaceBetween: 0,
               slidesPerView: 1.5
             }
           },
@@ -55,7 +108,7 @@ let initSliders = function () {
     let brandSwiperPagination = document.querySelector(
       '.brandsSwiper-pagination'
     )
-    if (windowWidth <= mediaBreakpoint) {
+    if (windowWidth < mediaBreakpoint) {
       brandSwiperPagination.style.display = 'flex'
       initBrandsSwiper()
     }
@@ -65,32 +118,12 @@ let initSliders = function () {
       let brandSwiperPagination = document.querySelector(
         '.brandsSwiper-pagination'
       )
-      if (windowWidth <= mediaBreakpoint) {
+      if (windowWidth < mediaBreakpoint) {
         brandSwiperPagination.style.display = 'flex'
         initBrandsSwiper()
       } else if (brandSwiper !== null) {
         brandSwiperPagination.style.display = 'none'
         destroyBrandsSwiper()
-      }
-    })
-
-    showMoreBtn.addEventListener('click', function () {
-      if (!showMoreBtn.classList.contains('show-more-btn--active')) {
-        showMoreBtn.textContent = 'Скрыть'
-        showMoreBtn.classList.add('show-more-btn--active')
-        let numOfElems = brandsItems.length + 2
-        setSliderItems(numOfElems)
-      } else {
-        showMoreBtn.textContent = showMoreBtnText
-        showMoreBtn.classList.remove('show-more-btn--active')
-        let itemsToDisplay = brandsItems.length - 3
-        for (let j = brandsItems.length; (j = itemsToDisplay); j--) {
-          if (brandsItems[j] != undefined) {
-            brandsItems[j].remove()
-          } else {
-            break
-          }
-        }
       }
     })
   }

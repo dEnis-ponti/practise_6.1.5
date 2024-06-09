@@ -140,31 +140,31 @@
 
 /* Swiper */
 
-.services__slider-mobile {
-  padding: 0 0 0 0 16px;
-}
+// .services__slider-mobile {
+//   padding: 0 0 0 0 16px;
+// }
 
-.swiper-wrapper {
-  flex-wrap: nowrap;
-  width: 100vw !important;
-  column-gap: 0;
-  row-gap: 0;
-}
+// .swiper-wrapper {
+//   flex-wrap: nowrap;
+//   width: 100vw !important;
+//   column-gap: 0;
+//   row-gap: 0;
+// }
 
-.swiper::before {
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  width: 60px;
-  right: 0;
-  background-image: linear-gradient(to left, #f8f8f8 0%, rgba(0, 0, 0, 0) 100%);
-  z-index: 100;
-}
+// .swiper::before {
+//   content: '';
+//   display: block;
+//   height: 100%;
+//   position: absolute;
+//   width: 60px;
+//   right: 0;
+//   background-image: linear-gradient(to left, #f8f8f8 0%, rgba(0, 0, 0, 0) 100%);
+//   z-index: 100;
+// }
 
-.swiper-slide:first-child {
-  margin-left: 16px;
-}
+// .swiper-slide:first-child {
+//   margin-left: 16px;
+// }
 
 .servicesSwiper-pagination {
   bottom: var(--swiper-pagination-bottom, 34px) !important;
