@@ -28,11 +28,16 @@ let initBurger = function () {
 
   let burgerDesktopDisplay = function () {
     let windowWidth = window.innerWidth
-    if (windowWidth > 1425) {
-      burgerMenu.classList.toggle('burger-menu--hide')
+    let burgerHideStatus = burgerMenu.classList.contains('burger-menu--hide')
+    if (windowWidth > 1425 && burgerHideStatus) {
+      console.log(burgerMenu.classList.contains('burger-menu--hide'))
+      burgerMenu.classList.remove('burger-menu--hide')
+    } else if (windowWidth < 1425 && !burgerHideStatus) {
+      burgerMenu.classList.add('burger-menu--hide')
     }
   }
   burgerDesktopDisplay()
+  window.addEventListener('resize', burgerDesktopDisplay())
 }
 
 export default initBurger

@@ -8,14 +8,11 @@ let initSliders = function () {
     let showMoreBtn = brandsSlider.querySelector('.show-more-btn')
     let showMoreBtnText = showMoreBtn.textContent
 
-    console.log(brandsItems)
     if (window.innerWidth < 768) {
       showMoreBtn.style.display = 'none'
-      let listLength = brandsItems.length
-      console.log(listLength)
+
       for (let j = 11; j >= 9; j--) {
         brandsItems[j].classList.add('brands__item--hide')
-        console.log(brandsItems[j].classList)
       }
     } else if (window.innerWidth >= 768 && window.innerWidth < 1426) {
       showMoreBtn.style.display = 'inline-block'
@@ -29,14 +26,18 @@ let initSliders = function () {
       }
     }
 
-    console.log(brandsItems)
     showMoreBtn.addEventListener('click', function () {
       if (!showMoreBtn.classList.contains('show-more-btn--active')) {
         showMoreBtn.textContent = 'Скрыть'
         showMoreBtn.classList.add('show-more-btn--active')
+        let chidrenArrBrandsItems = Array.from(brandsItems)
         for (let i = 11; i >= 6; i--) {
-          if (brandsItems[i].contains('brands__item--hide')) {
-            brandsItems[i].classList.remove('brand__item--hide')
+          let brandsItemHide = chidrenArrBrandsItems.find((e) =>
+            e.classList.contains('brands__item--hide')
+          )
+          console.log(brandsItemHide)
+          if (brandsItemHide) {
+            chidrenArrBrandsItems[i].classList.remove('brands__item--hide')
           }
         }
       } else {
@@ -115,6 +116,7 @@ let initSliders = function () {
 
     window.addEventListener('resize', function () {
       let windowWidth = window.innerWidth
+      setSliderItems()
       let brandSwiperPagination = document.querySelector(
         '.brandsSwiper-pagination'
       )
