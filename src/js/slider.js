@@ -7,22 +7,31 @@ let initSliders = function () {
     let brandsItems = brandsList.children
     let showMoreBtn = brandsSlider.querySelector('.show-more-btn')
     let showMoreBtnText = showMoreBtn.textContent
+    let windowWidth = window.innerWidth
 
-    if (window.innerWidth < 768) {
+    if (windowWidth < 768) {
       showMoreBtn.style.display = 'none'
 
-      for (let j = 11; j >= 9; j--) {
-        brandsItems[j].classList.add('brands__item--hide')
+      for (let j = 11; j >= 6; j--) {
+        if (j < 9) {
+          brandsItems[j].classList.remove('brands__item--hide')
+        } else {
+          brandsItems[j].classList.add('brands__item--hide')
+        }
       }
-    } else if (window.innerWidth >= 768 && window.innerWidth < 1426) {
+    } else if (windowWidth >= 768 && windowWidth < 969) {
       showMoreBtn.style.display = 'inline-block'
       for (let j = 11; j >= 6; j--) {
         brandsItems[j].classList.add('brands__item--hide')
       }
-    } else if (window.innerWidth >= 1426) {
+    } else if (windowWidth >= 969) {
       showMoreBtn.style.display = 'inline-block'
-      for (let j = 11; j >= 8; j--) {
-        brandsItems[j].classList.add('brands__item--hide')
+      for (let j = 11; j >= 6; j--) {
+        if (j < 8) {
+          brandsItems[j].classList.remove('brands__item--hide')
+        } else {
+          brandsItems[j].classList.add('brands__item--hide')
+        }
       }
     }
 
@@ -35,7 +44,6 @@ let initSliders = function () {
           let brandsItemHide = chidrenArrBrandsItems.find((e) =>
             e.classList.contains('brands__item--hide')
           )
-          console.log(brandsItemHide)
           if (brandsItemHide) {
             chidrenArrBrandsItems[i].classList.remove('brands__item--hide')
           }
@@ -43,12 +51,12 @@ let initSliders = function () {
       } else {
         showMoreBtn.textContent = showMoreBtnText
         showMoreBtn.classList.remove('show-more-btn--active')
-        if (window.innerWidth >= 768 && window.innerWidth < 1426) {
+        if (windowWidth >= 768 && windowWidth < 1426) {
           showMoreBtn.style.display = 'inline-block'
           for (let j = 11; j >= 6; j--) {
             brandsItems[j].classList.add('brands__item--hide')
           }
-        } else if (window.innerWidth >= 1426) {
+        } else if (windowWidth >= 1426) {
           showMoreBtn.style.display = 'inline-block'
           for (let j = 11; j >= 8; j--) {
             brandsItems[j].classList.add('brands__item--hide')
@@ -58,11 +66,13 @@ let initSliders = function () {
     })
   }
   setSliderItems()
+  window.addEventListener('resize', setSliderItems)
   let initBrandsSliders = function () {
     let brandsSlider = document.querySelector('.brands__slider')
     let brandsList = document.querySelector('.brands__list')
     let brandsItems = brandsList.children
 
+    let windowWidth = window.innerWidth
     let brandSwiper = null
     let mediaBreakpoint = 768
 
@@ -105,7 +115,6 @@ let initSliders = function () {
       brandSwiper = null
     }
 
-    let windowWidth = window.innerWidth
     let brandSwiperPagination = document.querySelector(
       '.brandsSwiper-pagination'
     )
@@ -116,7 +125,6 @@ let initSliders = function () {
 
     window.addEventListener('resize', function () {
       let windowWidth = window.innerWidth
-      setSliderItems()
       let brandSwiperPagination = document.querySelector(
         '.brandsSwiper-pagination'
       )
