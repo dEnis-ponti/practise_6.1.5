@@ -26,18 +26,20 @@ let initBurger = function () {
   //   burgerMenuFooter.style.height = adjustValue
   // }
 
-  let burgerDesktopDisplay = function () {
+  function burgerDesktopDisplay() {
     let windowWidth = window.innerWidth
     let burgerHideStatus = burgerMenu.classList.contains('burger-menu--hide')
     if (windowWidth > 1425 && burgerHideStatus) {
       console.log(burgerMenu.classList.contains('burger-menu--hide'))
       burgerMenu.classList.remove('burger-menu--hide')
-    } else if (windowWidth < 1425 && !burgerHideStatus) {
+    } else if (windowWidth <= 1425 && !burgerHideStatus) {
+      console.log(burgerMenu.classList.contains('burger-menu--hide'))
       burgerMenu.classList.add('burger-menu--hide')
     }
+    console.log('resize works')
   }
   burgerDesktopDisplay()
-  window.addEventListener('resize', burgerDesktopDisplay())
+  window.addEventListener('resize', burgerDesktopDisplay)
 }
 
 export default initBurger
