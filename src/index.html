@@ -451,27 +451,43 @@
                 >Ремонт различных видов техники</h3
               >
             </div>
-            <template id="service-template">
-              <li class="services__item">
-                <a class="services__link link" href="#">Ремонт устройства #1</a>
-              </li>
-            </template>
-            <template id="swiper-template-services">
-              <li class="services__item services__item--swiper swiper-slide">
-                <a class="services__link link" href="#">Ремонт устройства #1</a>
-              </li>
-            </template>
-            <div class="services__slider services__slider--show">
-              <ul class="services__list list-reset"> </ul>
+
+            <div class="services__slider swiper servicesSwiper">
+              <ul class="services__list swiper-wrapper list-reset">
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт ноутбуков</a>
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт планшетов</a>
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт ПК</a>
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт мониторов</a>
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт наушников</a>
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт аксессуаров</a>
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт модемов</a>
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#"
+                    >Ремонт &#9733; Акции</a
+                  >
+                </li>
+                <li class="services__item services__item--swiper swiper-slide">
+                  <a class="services__link link" href="#">Ремонт БК</a>
+                </li>
+              </ul>
+              <div class="servicesSwiper-pagination"></div>
               <button class="services__show-more show-more-btn link">
                 Показать все
               </button>
-            </div>
-            <div
-              class="services__slider-mobile services__slider-mobile--hide swiper servicesSwiper list-reset"
-            >
-              <div class="services__list swiper-wrapper"> </div>
-              <div class="servicesSwiper-pagination"></div>
             </div>
           </section>
           <section class="main__prices prices">
