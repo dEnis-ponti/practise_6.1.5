@@ -11,3 +11,6 @@ https://github.com/dEnis-ponti/practise_6.1.5/tree/gh-pages
 <b>Ветка разработки:</b><br>
 https://github.com/dEnis-ponti/practise_6.1.5/tree/dev
 <br>
+<b>Ветка Доработок по Свайперу:</b><br>
+https://github.com/dEnis-ponti/practise_6.1.5/tree/swiper-fix
+<br>
